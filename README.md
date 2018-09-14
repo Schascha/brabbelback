@@ -3,8 +3,11 @@
 Just some JS utils
 
 - [cookie](#cookie)
+- [visible](#visible)
 
 ## cookie
+
+Handle cookies
 
 ```javascript
 import {get, set} from 'brabbelback/cookie';
@@ -33,6 +36,22 @@ Remove cookie:
 ```javascript
 set('name', '', 0);
 ```
+
+## visible
+
+Test if a DOM element is visible on the users viewport
+
+```javascript
+import {visible} from 'brabbelback/visible';
+```
+
+Usage:
+
+```javascript
+var el = document.getElementById('name');
+echo visible(el);
+```
+
 
 ## License
 
