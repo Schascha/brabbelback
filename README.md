@@ -49,9 +49,9 @@ Usage:
 
 ```javascript
 var el = document.getElementById('name');
-echo visible(el);
-```
 
+window.console.log(visible(el));
+```
 
 ## License
 
