@@ -1,0 +1,21 @@
+{
+  "name": "brabbelback",
+  "version": "0.0.1",
+  "description": "Just some JS utils",
+  "main": "cookie.js",
+  "keywords": [
+    "javascript",
+    "es6"
+  ],
+  "scripts": {
+    "test": "eslint *.js"
+  },
+  "author": "Sascha Künstler <contact.schascha@gmail.com> (http://www.schaschaweb.de)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Schascha/brabbelback/issues"
+  },
+  "devDependencies": {
+    "eslint": "^5.5.0"
+  }
+}
