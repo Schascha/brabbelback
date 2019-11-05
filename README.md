@@ -71,6 +71,20 @@ var el = document.getElementById('name');
 window.console.log(visible(el));
 ```
 
+## Bugs?
+
+Please let me know: https://github.com/Schascha/brabbelback/issues
+
+## :coffee: Buy me a Coffee
+
+Support this project and [others](https://github.com/Schascha?tab=repositories) via [PayPal](https://www.paypal.me/LosZahlos). Thanks
+
+## Changelog
+
+Detailed changes for each release are documented in the [release notes](https://github.com/Schascha/brabbelback/releases).
+
 ## License
 
 [MIT](./LICENSE)
+
+Copyright (c) 2018-present Sascha Künstler
