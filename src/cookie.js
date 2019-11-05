@@ -3,7 +3,7 @@
  * @param  {string} name
  * @return {string}
  */
-export function get(name) {
+export function getCookie(name) {
 	const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
 
 	return (match && match[2]) ? match[2] : false;
@@ -15,7 +15,7 @@ export function get(name) {
  * @param {string} value
  * @param {number} [days=1]
  */
-export function set(name, value, days = 1) {
+export function setCookie(name, value, days = 1) {
 	if (!name) {
 		return;
 	}

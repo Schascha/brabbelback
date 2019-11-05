@@ -2,39 +2,55 @@
 
 Just some JS utils
 
+- [classname](#classnames)
 - [cookie](#cookie)
 - [visible](#visible)
+
+## classnames
+
+Conditional class name helper
+
+```javascript
+import {classnames} from 'brabbelback';
+```
+
+Usage:
+
+```javascript
+classnames(['foo', 'bar', {baz: true}]); // => 'foo bar baz'
+classnames([{foo: true, bar: undefined}, 'baz']); // => 'foo baz'
+```
 
 ## cookie
 
 Handle cookies
 
 ```javascript
-import {get, set} from 'brabbelback/cookie';
+import {getCookie, setCookie} from 'brabbelback';
 ```
 
 Create a cookie:
 
 ```javascript
-set('name', 'value');
+setCookie('name', 'value');
 ```
 
 Create a cookie that expires 7 days from now:
 
 ```javascript
-set('name', 'value', 7);
+setCookie('name', 'value', 7);
 ```
 
 Read cookie:
 
 ```javascript
-get('name');
+getCookie('name');
 ```
 
 Remove cookie:
 
 ```javascript
-set('name', '', 0);
+setCookie('name', '', 0);
 ```
 
 ## visible
@@ -42,7 +58,7 @@ set('name', '', 0);
 Test if a DOM element is visible on the users viewport
 
 ```javascript
-import {visible} from 'brabbelback/visible';
+import {visible} from 'brabbelback';
 ```
 
 Usage:

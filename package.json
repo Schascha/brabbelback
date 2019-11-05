@@ -2,13 +2,13 @@
   "name": "brabbelback",
   "version": "0.0.1",
   "description": "Just some JS utils",
-  "main": "cookie.js",
+  "main": "index.js",
   "keywords": [
     "javascript",
     "es6"
   ],
   "scripts": {
-    "test": "eslint *.js"
+    "test": "eslint *.js && jest src/ --coverage --verbose"
   },
   "author": "Sascha Künstler <contact.schascha@gmail.com> (http://www.schaschaweb.de)",
   "license": "MIT",
@@ -16,6 +16,15 @@
     "url": "https://github.com/Schascha/brabbelback/issues"
   },
   "devDependencies": {
-    "eslint": "^5.5.0"
+    "babel-jest": "^24.9.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "eslint": "^5.5.0",
+    "eslint-plugin-jest": "^23.0.2",
+    "jest": "^24.9.0"
+  },
+  "babel": {
+    "plugins": [
+      "transform-es2015-modules-commonjs"
+    ]
   }
 }
