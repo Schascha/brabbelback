@@ -17,7 +17,7 @@ Conditional class name helper
 import {classnames} from 'brabbelback';
 
 classnames(['foo', 'bar', {baz: true}]); // => 'foo bar baz'
-classnames([{foo: true, bar: undefined}, 'baz']); // => 'foo baz'
+classnames([{foo: true, bar: undefined}, 'baz']);  // 'foo baz'
 ```
 
 ## cookie
@@ -90,18 +90,28 @@ import {print} from 'brabbelback';
 
 ```javascript
 import {push} from 'brabbelback';
+
+var array = [];
+push(array, 'foo');  // ['foo']
+push(array, ['foo', 'bar', 'baz']);  // ['foo', 'bar', 'baz']
 ```
 
 ### Return previous element
 
 ```javascript
 import {prev} from 'brabbelback';
+
+prev(0, ['foo', 'bar', 'baz']);  // 'baz'
+prev(2, ['foo', 'bar', 'baz']);  // 'bar'
 ```
 
 ### Return next element
 
 ```javascript
 import {next} from 'brabbelback';
+
+next(0, ['foo', 'bar', 'baz']);  // 'bar'
+next(2, ['foo', 'bar', 'baz']);  // 'foo'
 ```
 
 ### Return random element

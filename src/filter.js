@@ -101,7 +101,9 @@ export function push(obj, value) {
  * @return {mixed}
  */
 export function prev(index, obj) {
-	return obj[(index + obj.length - 1) % obj.length];
+	if (Array.isArray(obj)) {
+		return obj[(index + obj.length - 1) % obj.length];
+	}
 }
 
 /**
@@ -111,7 +113,9 @@ export function prev(index, obj) {
  * @return {mixed}
  */
 export function next(index, obj) {
-	return obj[(index + 1) % obj.length];
+	if (Array.isArray(obj)) {
+		return obj[(index + 1) % obj.length];
+	}
 }
 
 /**
