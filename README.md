@@ -1,10 +1,10 @@
 # brabbelback
 
-[![Travis Status](https://travis-ci.org/Schascha/brabbelback.svg?branch=master)](https://travis-ci.org/Schascha/brabbelback)
+[![Travis Status](https://travis-ci.com/Schascha/brabbelback.svg?branch=master)](https://travis-ci.org/Schascha/brabbelback)
 
 Just some JS utils
 
-- [classname](#classnames)
+- [classnames](#classnames)
 - [cookie](#cookie)
 - [visible](#visible)
 
