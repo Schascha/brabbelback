@@ -11,6 +11,10 @@
     "test": "eslint *.js && jest src/ --coverage --verbose"
   },
   "author": "Sascha Künstler <contact.schascha@gmail.com> (http://www.schaschaweb.de)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Schascha/brabbelback"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Schascha/brabbelback/issues"

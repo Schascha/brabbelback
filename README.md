@@ -1,5 +1,7 @@
 # brabbelback
 
+[![Travis Status](https://travis-ci.org/Schascha/brabbelback.svg?branch=master)](https://travis-ci.org/Schascha/brabbelback)
+
 Just some JS utils
 
 - [classname](#classnames)
