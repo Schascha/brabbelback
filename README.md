@@ -1,11 +1,12 @@
 # brabbelback
 
-[![Travis Status](https://travis-ci.com/Schascha/brabbelback.svg?branch=master)](https://travis-ci.org/Schascha/brabbelback)
+[![Travis Status](https://travis-ci.com/Schascha/brabbelback.svg?branch=master)](https://travis-ci.com/Schascha/brabbelback)
 
 Just some JS utils
 
 - [classnames](#classnames)
 - [cookie](#cookie)
+- [filter](#filter)
 - [visible](#visible)
 
 ## classnames
@@ -14,11 +15,7 @@ Conditional class name helper
 
 ```javascript
 import {classnames} from 'brabbelback';
-```
 
-Usage:
-
-```javascript
 classnames(['foo', 'bar', {baz: true}]); // => 'foo bar baz'
 classnames([{foo: true, bar: undefined}, 'baz']); // => 'foo baz'
 ```
@@ -31,28 +28,92 @@ Handle cookies
 import {getCookie, setCookie} from 'brabbelback';
 ```
 
-Create a cookie:
+### Create a cookie
 
 ```javascript
 setCookie('name', 'value');
 ```
 
-Create a cookie that expires 7 days from now:
+### Create a cookie that expires 7 days from now
 
 ```javascript
 setCookie('name', 'value', 7);
 ```
 
-Read cookie:
+### Read cookie
 
 ```javascript
 getCookie('name');
 ```
 
-Remove cookie:
+### Remove cookie
 
 ```javascript
 setCookie('name', '', 0);
+```
+
+## filter
+
+Array/Object helper
+
+### Filter an array of objects with multiple criteria
+
+```javascript
+import {filter} from 'brabbelback';
+```
+
+### Compare values
+
+```javascript
+import {compare} from 'brabbelback';
+```
+
+### Group array items by key
+
+```javascript
+import {groupBy} from 'brabbelback';
+```
+
+### Find a value in obj recursively
+
+```javascript
+import {has} from 'brabbelback';
+```
+
+### Print a value or an array of values
+
+```javascript
+import {print} from 'brabbelback';
+```
+
+### Push a value or an array of values recursively
+
+```javascript
+import {push} from 'brabbelback';
+```
+
+### Return previous element
+
+```javascript
+import {prev} from 'brabbelback';
+```
+
+### Return next element
+
+```javascript
+import {next} from 'brabbelback';
+```
+
+### Return random element
+
+```javascript
+import {random} from 'brabbelback';
+```
+
+### Check if value is empty
+
+```javascript
+import {isEmpty} from 'brabbelback';
 ```
 
 ## visible
@@ -61,11 +122,7 @@ Test if a DOM element is visible on the users viewport
 
 ```javascript
 import {visible} from 'brabbelback';
-```
 
-Usage:
-
-```javascript
 var el = document.getElementById('name');
 
 window.console.log(visible(el));
