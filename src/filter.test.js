@@ -1,7 +1,16 @@
-import {isEmpty, next, prev, push, random} from './filter';
+import {compare, isEmpty, next, prev, print, push, random} from './filter';
 
 
 describe('The filter utils', () => {
+
+	it('should compare to values', () => {
+		const array = ['foo', 'bar', 'baz'];
+
+		expect(compare()).toBeUndefined();
+		expect(compare(array, 'foo', 'contains')).toBeTruthy();
+		expect(compare('foobar', 'foo', 'contains')).toBeTruthy();
+		expect(compare(array, 'foo')).toBeTruthy();
+	});
 
 	it('should validate empty value', () => {
 		expect(isEmpty(null)).toBeTruthy();
@@ -27,21 +36,27 @@ describe('The filter utils', () => {
 		expect(prev()).toBeUndefined();
 	});
 
+	it('should returns array as string', () => {
+		expect(print('foo')).toBe('foo');
+		expect(print(['foo', 'bar', 'baz'])).toBe('foo, bar, baz');
+	});
+
 	it('should push values or an array of values recursively', () => {
-		var array = [];
+		const array = [];
 
 		push(array, 'foo');
-		expect(array.length).toBe(1);
+		expect(array).toHaveLength(1);
 
 		push(array, ['foo', 'bar', 'baz']);
-		expect(array.length).toBe(3);
+		expect(array).toHaveLength(3);
+
+		expect(push()).toBeUndefined();
 	});
 
 	it('should return random element', () => {
 		const array = ['foo', 'bar', 'baz'];
 
 		expect(random(array)).toBeDefined();
-		expect(prev()).toBeUndefined();
 	});
 
 });

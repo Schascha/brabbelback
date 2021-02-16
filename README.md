@@ -1,6 +1,6 @@
 # brabbelback
 
-[![Travis Status](https://travis-ci.com/Schascha/brabbelback.svg?branch=master)](https://travis-ci.com/Schascha/brabbelback)
+![Build](https://github.com/Schascha/stechus-kaktus/workflows/Build/badge.svg)
 
 Just some JS utils
 
@@ -91,39 +91,52 @@ import {print} from 'brabbelback';
 ```javascript
 import {push} from 'brabbelback';
 
-var array = [];
+const array = [];
+
 push(array, 'foo');  // ['foo']
 push(array, ['foo', 'bar', 'baz']);  // ['foo', 'bar', 'baz']
 ```
 
-### Return previous element
+### Return previous element from array
 
 ```javascript
 import {prev} from 'brabbelback';
 
-prev(0, ['foo', 'bar', 'baz']);  // 'baz'
-prev(2, ['foo', 'bar', 'baz']);  // 'bar'
+const arr = ['foo', 'bar', 'baz'];
+
+window.console.log(prev(0, arr));  // 'baz'
+window.console.log(prev(2, arr));  // 'bar'
 ```
 
-### Return next element
+### Return next element from array
 
 ```javascript
 import {next} from 'brabbelback';
 
-next(0, ['foo', 'bar', 'baz']);  // 'bar'
-next(2, ['foo', 'bar', 'baz']);  // 'foo'
+const arr = ['foo', 'bar', 'baz'];
+
+window.console.log(next(0, arr));  // 'bar'
+window.console.log(next(2, arr));  // 'foo'
 ```
 
-### Return random element
+### Return random element from array
 
 ```javascript
 import {random} from 'brabbelback';
+
+const array = ['foo', 'bar', 'baz'];
+
+window.console.log(random(array));  // 'foo' or 'bar' or 'baz'
 ```
 
-### Check if value is empty
+### Check if value or array is empty
 
 ```javascript
 import {isEmpty} from 'brabbelback';
+
+window.console.log(isEmpty(null));  // true
+window.console.log(isEmpty(''));  // true
+window.console.log(isEmpty([]));  // true
 ```
 
 ## visible
@@ -142,7 +155,7 @@ window.console.log(visible(el));
 
 Please let me know: https://github.com/Schascha/brabbelback/issues
 
-## :coffee: Buy me a Coffee
+## Buy me a Coffee :coffee:
 
 Support this project and [others](https://github.com/Schascha?tab=repositories) via [PayPal](https://www.paypal.me/LosZahlos). Thanks
 
@@ -154,4 +167,4 @@ Detailed changes for each release are documented in the [release notes](https://
 
 [MIT](./LICENSE)
 
-Copyright (c) 2018-present Sascha Künstler
+Copyright (c) 2018 Sascha Künstler

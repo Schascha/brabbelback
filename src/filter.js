@@ -1,22 +1,4 @@
 /**
- * Filters an array of objects with multiple criteria
- * @param  {Object} obj
- * @param  {Object[]} filters
- * @return {Object}
- */
-export function filter(obj, filters) {
-	return (filters && filters.length) ? obj.filter(el => {
-		return filters.every(filter => {
-			if (Array.isArray(filter.field)) {
-				return filter.field.find(item => compare(el[item], filter.value, filter.operator));
-			} else {
-				return compare(el[filter.field], filter.value, filter.operator);
-			}
-		});
-	}) : obj;
-}
-
-/**
  * Compare a with b
  * @param  {String|String[]} a
  * @param  {String|String[]} b
@@ -41,13 +23,31 @@ export function compare(a, b, operator = '') {
 }
 
 /**
+ * Filters an array of objects with multiple criteria
+ * @param  {Object} obj
+ * @param  {Object[]} filters
+ * @return {Object}
+ */
+export function filter(obj, filters) {
+	return (filters && filters.length) ? obj.filter(el => {
+		return filters.every(filter => {
+			if (Array.isArray(filter.field)) {
+				return filter.field.find(item => compare(el[item], filter.value, filter.operator));
+			} else {
+				return compare(el[filter.field], filter.value, filter.operator);
+			}
+		});
+	}) : obj;
+}
+
+/**
  * Group array items by key
  * @param  {Object[]} obj
  * @param  {String} key
  * @return {Object}
  */
 export function groupBy(obj, key) {
-	return obj.reduce(function(rv, x) {
+	return obj.reduce(function (rv, x) {
 		(rv[x[key]] = rv[x[key]] || []).push(x);
 		return rv;
 	}, {});
@@ -66,6 +66,39 @@ export function has(obj, value) {
 
 	return (Array.isArray(value))
 		? value.find((el) => has(obj, el)) : obj.indexOf(value) !== -1;
+}
+
+/**
+ * Checks if value or array is empty
+ * @param  {mixed} value
+ * @return {Boolean}
+ */
+export function isEmpty(value) {
+	return (value === null || value === '' || (Array.isArray(value) && !value.length));
+}
+
+/**
+ * Returns next element
+ * @param  {number} index
+ * @param  {Object[]} obj
+ * @return {mixed}
+ */
+export function next(index, obj) {
+	if (Array.isArray(obj)) {
+		return obj[(index + 1) % obj.length];
+	}
+}
+
+/**
+ * Returns previous element
+ * @param  {number} index
+ * @param  {Object[]} obj
+ * @return {mixed}
+ */
+export function prev(index, obj) {
+	if (Array.isArray(obj)) {
+		return obj[(index + obj.length - 1) % obj.length];
+	}
 }
 
 /**
@@ -95,30 +128,6 @@ export function push(obj, value) {
 }
 
 /**
- * Returns previous element
- * @param  {number} index
- * @param  {Object[]} obj
- * @return {mixed}
- */
-export function prev(index, obj) {
-	if (Array.isArray(obj)) {
-		return obj[(index + obj.length - 1) % obj.length];
-	}
-}
-
-/**
- * Returns next element
- * @param  {number} index
- * @param  {Object[]} obj
- * @return {mixed}
- */
-export function next(index, obj) {
-	if (Array.isArray(obj)) {
-		return obj[(index + 1) % obj.length];
-	}
-}
-
-/**
  * Returns random element
  * @param  {Object[]} obj
  * @return {mixed}
@@ -127,13 +136,4 @@ export function random(obj) {
 	if (Array.isArray(obj)) {
 		return obj[Math.floor(Math.random() * obj.length)];
 	}
-}
-
-/**
- * Checks if value is empty
- * @param  {mixed} value
- * @return {Boolean}
- */
-export function isEmpty(value) {
-	return (value === null || value === '' || (Array.isArray(value) && !value.length));
 }
