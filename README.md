@@ -80,6 +80,16 @@ import {groupBy} from 'brabbelback';
 import {has} from 'brabbelback';
 ```
 
+### Check if value or array is empty
+
+```javascript
+import {isEmpty} from 'brabbelback';
+
+console.log(isEmpty(null));  // true
+console.log(isEmpty(''));  // true
+console.log(isEmpty([]));  // true
+```
+
 ### Print a value or an array of values
 
 ```javascript
@@ -104,8 +114,8 @@ import {prev} from 'brabbelback';
 
 const arr = ['foo', 'bar', 'baz'];
 
-window.console.log(prev(0, arr));  // 'baz'
-window.console.log(prev(2, arr));  // 'bar'
+console.log(prev(0, arr));  // 'baz'
+console.log(prev(2, arr));  // 'bar'
 ```
 
 ### Return next element from array
@@ -115,8 +125,8 @@ import {next} from 'brabbelback';
 
 const arr = ['foo', 'bar', 'baz'];
 
-window.console.log(next(0, arr));  // 'bar'
-window.console.log(next(2, arr));  // 'foo'
+console.log(next(0, arr));  // 'bar'
+console.log(next(2, arr));  // 'foo'
 ```
 
 ### Return random element from array
@@ -126,17 +136,17 @@ import {random} from 'brabbelback';
 
 const array = ['foo', 'bar', 'baz'];
 
-window.console.log(random(array));  // 'foo' or 'bar' or 'baz'
+console.log(random(array));  // 'foo' or 'bar' or 'baz'
 ```
 
-### Check if value or array is empty
+### Shuffle array
 
 ```javascript
-import {isEmpty} from 'brabbelback';
+import {shuffle} from 'brabbelback';
 
-window.console.log(isEmpty(null));  // true
-window.console.log(isEmpty(''));  // true
-window.console.log(isEmpty([]));  // true
+const array = ['foo', 'bar', 'baz'];
+
+console.log(shuffle(array));
 ```
 
 ## visible
@@ -148,7 +158,7 @@ import {visible} from 'brabbelback';
 
 var el = document.getElementById('name');
 
-window.console.log(visible(el));
+console.log(visible(el));
 ```
 
 ## Bugs?
