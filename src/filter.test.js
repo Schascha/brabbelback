@@ -83,7 +83,7 @@ describe('The filter utils', () => {
 	it('should get type of value', () => {
 		expect(typeOf('')).toBe('string');
 		expect(typeOf(null)).toBe('null');
-		expect(typeOf(undefined)).toBe(undefined);
+		expect(typeOf(undefined)).toBe('undefined');
 		expect(typeOf([])).toBe('array');
 		expect(typeOf(1)).toBe('number');
 		expect(typeOf(NaN)).toBe('number');
