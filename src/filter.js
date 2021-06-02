@@ -13,7 +13,7 @@ export function compare(a, b, operator = '') {
 	switch (operator) {
 		case 'contains':
 			if (Array.isArray(a)) {
-				return a.findIndex(el => el.toLowerCase().indexOf(b.toLowerCase()) !== -1) !== -1
+				return a.findIndex(el => el.toLowerCase().indexOf(b.toLowerCase()) !== -1) !== -1;
 			} else {
 				return a.toLowerCase().indexOf(b.toLowerCase()) !== -1;
 			}
@@ -47,7 +47,7 @@ export function filter(obj, filters) {
  * @return {Object}
  */
 export function groupBy(obj, key) {
-	return obj.reduce(function (rv, x) {
+	return obj.reduce(function(rv, x) {
 		(rv[x[key]] = rv[x[key]] || []).push(x);
 		return rv;
 	}, {});
@@ -122,7 +122,7 @@ export function push(obj, value) {
 
 	if (Array.isArray(value)) {
 		value.forEach((el) => push(obj, el));
-	} else if(obj.indexOf(value) === -1) {
+	} else if (obj.indexOf(value) === -1) {
 		obj.push(value);
 	}
 }

@@ -9,8 +9,7 @@
     "sourceType": "module"
   },
   "extends": [
-    "eslint:recommended",
-    "plugin:jest/recommended"
+    "@schascha/eslint-config"
   ],
   "plugins": [
     "jest"
