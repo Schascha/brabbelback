@@ -137,3 +137,17 @@ export function random(obj) {
 		return obj[Math.floor(Math.random() * obj.length)];
 	}
 }
+
+/**
+ * Shuffle array
+ * @param {Object[]} obj
+ * @returns {Object[]}
+ */
+export function shuffle(obj) {
+	if (Array.isArray(obj)) {
+		return obj
+			.map(a => [Math.random(), a])
+			.sort((a, b) => a[0] - b[0])
+			.map(a => a[1]);
+	}
+}

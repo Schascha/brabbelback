@@ -1,4 +1,4 @@
-import {compare, isEmpty, next, prev, print, push, random} from './filter';
+import {compare, isEmpty, next, prev, print, push, random, shuffle} from './filter';
 
 
 describe('The filter utils', () => {
@@ -20,7 +20,7 @@ describe('The filter utils', () => {
 		expect(isEmpty(['foo'])).toBeFalsy();
 	});
 
-	it('should return next element', () => {
+	it('should return next element from array', () => {
 		const array = ['foo', 'bar', 'baz'];
 
 		expect(next(0, array)).toBe('bar');
@@ -28,7 +28,7 @@ describe('The filter utils', () => {
 		expect(next()).toBeUndefined();
 	});
 
-	it('should return prev element', () => {
+	it('should return prev element from array', () => {
 		const array = ['foo', 'bar', 'baz'];
 
 		expect(prev(0, array)).toBe('baz');
@@ -57,6 +57,17 @@ describe('The filter utils', () => {
 		const array = ['foo', 'bar', 'baz'];
 
 		expect(random(array)).toBeDefined();
+	});
+
+	it('should shuffle array', () => {
+		const
+			array = ['foo', 'bar', 'baz']
+		;
+
+		expect(shuffle()).toBeUndefined();
+		expect(shuffle('foo')).toBeUndefined();
+		expect(shuffle(array)).toBeDefined();
+		expect(shuffle(array)).toEqual(expect.arrayContaining(array));
 	});
 
 });
