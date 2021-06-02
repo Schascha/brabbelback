@@ -1,4 +1,4 @@
-import {compare, has, isEmpty, next, prev, print, push, random, shuffle} from './filter';
+import {compare, has, isEmpty, next, prev, print, push, random, shuffle, typeOf} from './filter';
 
 
 describe('The filter utils', () => {
@@ -52,13 +52,15 @@ describe('The filter utils', () => {
 	it('should push values or an array of values recursively', () => {
 		const array = [];
 
-		push(array, 'foo');
-		expect(array).toHaveLength(1);
-
-		push(array, ['foo', 'bar', 'baz']);
-		expect(array).toHaveLength(3);
+		expect(push(array, 'foo')).toBe(1);
+		expect(push(array, ['foo', 'bar', 'baz'])).toBe(3);
+		expect(push(array, 1)).toBe(4);
 
 		expect(push()).toBeUndefined();
+		expect(push(null, 'foo')).toBeUndefined();
+		expect(push('foo', 'bar')).toBeUndefined();
+		expect(push(array, '')).toBeUndefined();
+		expect(push(array, {})).toBeUndefined();
 	});
 
 	it('should return random element', () => {
@@ -76,6 +78,18 @@ describe('The filter utils', () => {
 		expect(shuffle('foo')).toBeUndefined();
 		expect(shuffle(array)).toBeDefined();
 		expect(shuffle(array)).toEqual(expect.arrayContaining(array));
+	});
+
+	it('should get type of value', () => {
+		expect(typeOf('')).toBe('string');
+		expect(typeOf(null)).toBe('null');
+		expect(typeOf(undefined)).toBe(undefined);
+		expect(typeOf([])).toBe('array');
+		expect(typeOf(1)).toBe('number');
+		expect(typeOf(NaN)).toBe('number');
+		expect(typeOf({})).toBe('object');
+		expect(typeOf(Symbol())).toBe('symbol');
+		expect(typeOf(() => {})).toBe('function');
 	});
 
 });

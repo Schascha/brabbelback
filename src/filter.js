@@ -112,19 +112,22 @@ export function print(value, separator = ', ') {
 
 /**
  * Pushs a value or an array of values recursively
- * @param  {Object[]} obj
- * @param  {(String|String[])} value
+ * @param  {Array} obj
+ * @param  {number | string | Array} value
+ * @returns {number | undefined}
  */
-export function push(obj, value) {
-	if (!obj || !value) {
+export function push(arr, value) {
+	if (!Array.isArray(arr) || !value || !isType(value, ['array', 'number', 'string'])) {
 		return;
 	}
 
 	if (Array.isArray(value)) {
-		value.forEach((el) => push(obj, el));
-	} else if (obj.indexOf(value) === -1) {
-		obj.push(value);
+		value.forEach((el) => push(arr, el));
+	} else if (!arr.includes(value)) {
+		arr.push(value);
 	}
+
+	return arr.length;
 }
 
 /**
@@ -150,4 +153,23 @@ export function shuffle(obj) {
 			.sort((a, b) => a[0] - b[0])
 			.map(a => a[1]);
 	}
+}
+
+export function typeOf(value) {
+	return Object.prototype.toString.call(value).split(']')[0].split(' ')[1].toLowerCase();
+}
+
+/**
+ * Typecheck
+ * @param {mixed} a
+ * @param {string | Array} b
+ * @returns
+ */
+export function isType(a, b) {
+	const
+		value = typeOf(a),
+		array = (Array.isArray(b) ? b : [b]).map(el => el.toLowerCase())
+	;
+
+	return array.includes(value);
 }
