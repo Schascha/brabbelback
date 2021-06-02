@@ -9,6 +9,13 @@ Just some JS utils
 - [filter](#filter)
 - [visible](#visible)
 
+## Installation
+
+You can use brabbelback in your project by installing it using [npm](https://www.npmjs.com/package/@schascha/brabbelback):
+
+```sh
+npm i @schascha/brabbelback
+```
 ## classnames
 
 Conditional class name helper
