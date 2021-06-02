@@ -1,4 +1,4 @@
-import {compare, isEmpty, next, prev, print, push, random, shuffle} from './filter';
+import {compare, has, isEmpty, next, prev, print, push, random, shuffle} from './filter';
 
 
 describe('The filter utils', () => {
@@ -10,6 +10,14 @@ describe('The filter utils', () => {
 		expect(compare(array, 'foo', 'contains')).toBeTruthy();
 		expect(compare('foobar', 'foo', 'contains')).toBeTruthy();
 		expect(compare(array, 'foo')).toBeTruthy();
+	});
+
+	it('should find a value in obj recursively', () => {
+		const array = ['foo', 'bar', 'baz'];
+
+		expect(has(array, 'foo')).toBeTruthy();
+		expect(has(array, ['foo', 'bar'])).toBeTruthy();
+		expect(has(array, '')).toBeFalsy();
 	});
 
 	it('should validate empty value', () => {

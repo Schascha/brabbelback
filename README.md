@@ -84,6 +84,11 @@ import {groupBy} from 'brabbelback';
 
 ```javascript
 import {has} from 'brabbelback';
+
+const array = ['foo', 'bar', 'baz'];
+
+console.log(has(array, 'foo'));  // true
+console.log(has(array, ['foo', 'bar']));  // true
 ```
 
 #### Check if value or array is empty
@@ -118,10 +123,10 @@ push(array, ['foo', 'bar', 'baz']);  // ['foo', 'bar', 'baz']
 ```javascript
 import {prev} from 'brabbelback';
 
-const arr = ['foo', 'bar', 'baz'];
+const array = ['foo', 'bar', 'baz'];
 
-console.log(prev(0, arr));  // 'baz'
-console.log(prev(2, arr));  // 'bar'
+console.log(prev(0, array));  // 'baz'
+console.log(prev(2, array));  // 'bar'
 ```
 
 #### Return next element from array
@@ -129,10 +134,10 @@ console.log(prev(2, arr));  // 'bar'
 ```javascript
 import {next} from 'brabbelback';
 
-const arr = ['foo', 'bar', 'baz'];
+const array = ['foo', 'bar', 'baz'];
 
-console.log(next(0, arr));  // 'bar'
-console.log(next(2, arr));  // 'foo'
+console.log(next(0, array));  // 'bar'
+console.log(next(2, array));  // 'foo'
 ```
 
 #### Return random element from array
