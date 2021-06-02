@@ -1,5 +1,5 @@
 {
-  "name": "brabbelback",
+  "name": "@schascha/brabbelback",
   "version": "0.0.3",
   "description": "Just some JS utils",
   "main": "index.js",
@@ -11,7 +11,7 @@
   "scripts": {
     "test": "eslint --ext \".js\" --ignore-path .gitignore . && jest src/ --coverage --verbose"
   },
-  "author": "Sascha Künstler <contact.schascha@gmail.com> (http://www.schaschaweb.de)",
+  "author": "Sascha Künstler <contact.schascha@gmail.com> (https://www.schaschaweb.de)",
   "repository": {
     "type": "git",
     "url": "https://github.com/Schascha/brabbelback"
