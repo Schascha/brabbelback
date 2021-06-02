@@ -1,6 +1,7 @@
 # brabbelback
 
-![Build](https://github.com/Schascha/stechus-kaktus/workflows/Build/badge.svg)
+[![Build](https://github.com/Schascha/brabbelback/workflows/Build/badge.svg)](https://github.com/Schascha/brabbelback/actions)
+[![npm](https://img.shields.io/npm/v/@schascha/brabbelback)](https://www.npmjs.com/package/@schascha/brabbelback)
 
 Just some JS utils
 
@@ -166,11 +167,11 @@ var el = document.getElementById('name');
 console.log(visible(el));
 ```
 
-## Bugs?
+## Bugs? 🐛
 
 Please let me know: https://github.com/Schascha/brabbelback/issues
 
-## Buy me a Coffee :coffee:
+## Buy me a Coffee ☕
 
 Support this project and [others](https://github.com/Schascha?tab=repositories) via [PayPal](https://www.paypal.me/LosZahlos). Thanks
 
