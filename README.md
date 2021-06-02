@@ -55,12 +55,12 @@ getCookie('name');
 #### Remove cookie
 
 ```javascript
-setCookie('name', '', 0);
+removeCookie('name');  // Same as setCookie('name', '', 0);
 ```
 
 ### filter
 
-Array/Object helper
+Array/Object utils
 
 #### Filter an array of objects with multiple criteria
 
