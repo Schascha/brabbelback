@@ -217,15 +217,15 @@ import {groupBy} from '@schascha/brabbelback';
 
 ### Visible
 
-#### `visible(el)`
+#### `isVisible(el)`
 
 Test if a DOM element is visible on the users viewport.
 
 ```javascript
-import {visible} from '@schascha/brabbelback';
+import {isVisible} from '@schascha/brabbelback';
 
 const el = document.getElementById('name');
-console.log(visible(el));
+console.log(isVisible(el));
 ```
 
 ## Bugs? 🐛

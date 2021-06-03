@@ -1,19 +1,18 @@
 /**
- * Returns if the DOM element is visible on the users viewport
- * @param  {object} el
- * @return {boolean}
+ * Returns if the DOM element is visible on the users viewport.
+ * @param  {object} el The DOM element to be inspected.
+ * @return {boolean} Return `true` if element is visible, else `false` or ``undefined`.
  */
-export function visible(el) {
+export function isVisible(el) {
 	if (!el) {
 		return;
 	}
 
-	const bounding = el.getBoundingClientRect();
+	const
+		{top, right, bottom, left} = el.getBoundingClientRect(),
+		width = window.innerWidth || document.documentElement.clientWidth,
+		height = window.innerHeight || document.documentElement.clientHeight
+	;
 
-	return (
-		bounding.top >= 0 &&
-		bounding.left >= 0 &&
-		bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-		bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
-	);
+	return (top >= 0 && right <= width && bottom <= height && left >= 0);
 }
