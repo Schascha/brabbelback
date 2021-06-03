@@ -1,15 +1,15 @@
 /**
- * Class name helper
- * @param  {mixed} classes
- * @return {string}
+ * Conditional class name helper.
+ * @param  {*} args Input of class names.
+ * @return {string} Returns `classes` as string.
  */
 
-export function classnames(classes) {
+export function classnames(...args) {
+	const classes = (args.length > 1) ? args : args[0];
+
 	if (Array.isArray(classes)) {
 		return classes.map((value) => classnames(value)).join(' ').trim();
-	}
-
-	if (classes && typeof classes === 'object' && classes.constructor === Object) {
+	} else if (classes && typeof classes === 'object' && classes.constructor === Object) {
 		return classnames(Object.keys(classes).filter((el) => {
 			const value = classes[el];
 			return (Array.isArray(value) && !value.length) ? false : (value);

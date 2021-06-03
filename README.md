@@ -125,15 +125,18 @@ console.log(toArray(['foo']));  // ['foo']
 console.log(toArray());  // []
 ```
 
-### classnames
+### Classnames
 
-Conditional class name helper
+#### `classnames(classes)`
+
+Conditional class name helper.
 
 ```javascript
 import {classnames} from '@schascha/brabbelback';
 
-classnames(['foo', 'bar', {baz: true}]); // => 'foo bar baz'
-classnames([{foo: true, bar: undefined}, 'baz']);  // 'foo baz'
+classnames('foo', 'bar', {baz: true}); // => 'foo bar baz'
+classnames(['foo', 'bar', 'baz']); // => 'foo bar baz'
+classnames({foo: true, bar: undefined}, 'baz');  // 'foo baz'
 ```
 
 ### cookie
