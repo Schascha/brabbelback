@@ -1,5 +1,5 @@
 /**
- * Finds value in array recursively
+ * Finds a value in array recursively.
  * @param  {Array} array The array to query.
  * @param  {*} value The search element.
  * @return {boolean} Returns `true` if `value` is in `array`, else `false`.
@@ -14,7 +14,7 @@
 }
 
 /**
- * Returns last element
+ * Returns last element from array.
  * @param  {Array} array The array The array to query.
  * @return {*} Returns the last element of `array`.
  */
@@ -24,7 +24,7 @@
 }
 
 /**
- * Returns next element
+ * Returns next element from array.
  * @param {number} index
  * @param {Array} array The array to query.
  * @param {boolean} [loop=true] Disable infinite array loop.
@@ -38,7 +38,7 @@
 }
 
 /**
- * Returns previous element
+ * Returns previous element from array.
  * @param {number} index
  * @param {Array} array The array to query.
  * @param {boolean} [loop=true] Disable infinite array loop.
@@ -52,7 +52,7 @@
 }
 
 /**
- * Prints a value or an array of values
+ * Prints a value or an array of values.
  * @param {*} value The value to print
  * @param {*} [separator=', '] The join separator
  * @returns {*} Returns value or joined array of `value`
@@ -62,7 +62,7 @@
 }
 
 /**
- * Pushs a value or an array of values recursively
+ * Pushs a value or an array of values recursively.
  * @param {Array} array The array to query.
  * @param {*} value The value to be added.
  * @param {boolean} [unique=true] Unique push of strings or numbers to `array`.
@@ -85,7 +85,7 @@
 }
 
 /**
- * Returns random element
+ * Returns random element from array.
  * @param  {Array} array The array to query.
  * @return {*} Returns a random element of `array`.
  */
@@ -96,7 +96,7 @@
 }
 
 /**
- * Shuffle array
+ * Randomize array.
  * @param {Array} array The array to be shuffled through.
  * @returns {Array} Returns the shuffled array.
  */
@@ -110,7 +110,7 @@
 }
 
 /**
- * Returns value as an array if it's not one
+ * Returns value as an array if it's not one.
  * @param {*} value The value to inspect
  * @returns {Array} Returns the value as an array
  */
