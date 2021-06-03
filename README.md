@@ -15,12 +15,106 @@ npm i @schascha/brabbelback
 
 ## Usage
 
+### array
+
+Array utils
+
+#### Find a value in array recursively
+
+```javascript
+import {has} from '@schascha/brabbelback';
+
+const array = ['foo', 'bar', 'baz'];
+console.log(has(array, 'foo'));  // true
+console.log(has(array, ['foo', 'bar']));  // true
+```
+
+#### Return last element from array
+
+```javascript
+import {last} from '@schascha/brabbelback';
+
+const array = ['foo', 'bar', 'baz'];
+console.log(last(['foo', 'bar', 'baz']));  // 'baz'
+```
+
+#### Return next element from array
+
+```javascript
+import {next} from '@schascha/brabbelback';
+
+const array = ['foo', 'bar', 'baz'];
+console.log(next(0, array));  // 'bar'
+console.log(next(2, array));  // 'foo'
+console.log(next(2, array, false));  // Disable infinite loop through array. Returns `undefined`.
+```
+
+#### Return previous element from array
+
+```javascript
+import {prev} from '@schascha/brabbelback';
+
+const array = ['foo', 'bar', 'baz'];
+console.log(prev(0, array));  // 'baz'
+console.log(prev(2, array));  // 'bar'
+console.log(prev(0, array, false));  // Disable infinite loop through array. Returns undefined.
+```
+
+#### Push a value or an array of values recursively
+
+```javascript
+import {push} from '@schascha/brabbelback';
+
+const array = [];
+push(array, 'foo');  // ['foo']
+push(array, ['foo', 'bar', 'baz']);  // ['foo', 'bar', 'baz']
+push(array, 'foo', false);  // Disable unique push of strings and numbers. Returns ['foo', 'bar', 'baz', 'foo']
+```
+
+#### Print a value or an array of values
+
+```javascript
+import {print} from '@schascha/brabbelback';
+
+console.log(print('foo'))  // 'foo'
+console.log(print(['foo', 'bar', 'baz']))  // 'foo, bar, baz'
+console.log(print(['foo', 'bar', 'baz'], '|'))  // 'foo|bar|baz'
+```
+
+#### Return random element from array
+
+```javascript
+import {random} from '@schascha/brabbelback';
+
+const array = ['foo', 'bar', 'baz'];
+console.log(random(array));  // 'foo' or 'bar' or 'baz'
+```
+
+#### Shuffle array
+
+```javascript
+import {shuffle} from '@schascha/brabbelback';
+
+const array = ['foo', 'bar'];
+console.log(shuffle(array));  // ['foo', 'bar'] or ['bar', 'foo']
+```
+
+#### Return value as an array if it's not one
+
+```javascript
+import {toArray} from '@schascha/brabbelback';
+
+console.log(toArray('foo'));  // ['foo']
+console.log(toArray(['foo']));  // ['foo']
+console.log(toArray());  // []
+```
+
 ### classnames
 
 Conditional class name helper
 
 ```javascript
-import {classnames} from 'brabbelback';
+import {classnames} from '@schascha/brabbelback';
 
 classnames(['foo', 'bar', {baz: true}]); // => 'foo bar baz'
 classnames([{foo: true, bar: undefined}, 'baz']);  // 'foo baz'
@@ -31,7 +125,7 @@ classnames([{foo: true, bar: undefined}, 'baz']);  // 'foo baz'
 Handle cookies
 
 ```javascript
-import {getCookie, setCookie} from 'brabbelback';
+import {getCookie, setCookie} from '@schascha/brabbelback';
 ```
 
 #### Create a cookie
@@ -60,104 +154,34 @@ removeCookie('name');  // Same as setCookie('name', '', 0);
 
 ### filter
 
-Array/Object utils
+Compare and filter utils
 
 #### Filter an array of objects with multiple criteria
 
 ```javascript
-import {filter} from 'brabbelback';
+import {filter} from '@schascha/brabbelback';
 ```
 
 #### Compare values
 
 ```javascript
-import {compare} from 'brabbelback';
+import {compare} from '@schascha/brabbelback';
 ```
 
 #### Group array items by key
 
 ```javascript
-import {groupBy} from 'brabbelback';
-```
-
-#### Find a value in obj recursively
-
-```javascript
-import {has} from 'brabbelback';
-
-const array = ['foo', 'bar', 'baz'];
-
-console.log(has(array, 'foo'));  // true
-console.log(has(array, ['foo', 'bar']));  // true
+import {groupBy} from '@schascha/brabbelback';
 ```
 
 #### Check if value or array is empty
 
 ```javascript
-import {isEmpty} from 'brabbelback';
+import {isEmpty} from '@schascha/brabbelback';
 
 console.log(isEmpty(null));  // true
 console.log(isEmpty(''));  // true
 console.log(isEmpty([]));  // true
-```
-
-#### Print a value or an array of values
-
-```javascript
-import {print} from 'brabbelback';
-```
-
-#### Push a value or an array of values recursively
-
-```javascript
-import {push} from 'brabbelback';
-
-const array = [];
-
-push(array, 'foo');  // ['foo']
-push(array, ['foo', 'bar', 'baz']);  // ['foo', 'bar', 'baz']
-```
-
-#### Return previous element from array
-
-```javascript
-import {prev} from 'brabbelback';
-
-const array = ['foo', 'bar', 'baz'];
-
-console.log(prev(0, array));  // 'baz'
-console.log(prev(2, array));  // 'bar'
-```
-
-#### Return next element from array
-
-```javascript
-import {next} from 'brabbelback';
-
-const array = ['foo', 'bar', 'baz'];
-
-console.log(next(0, array));  // 'bar'
-console.log(next(2, array));  // 'foo'
-```
-
-#### Return random element from array
-
-```javascript
-import {random} from 'brabbelback';
-
-const array = ['foo', 'bar', 'baz'];
-
-console.log(random(array));  // 'foo' or 'bar' or 'baz'
-```
-
-#### Shuffle array
-
-```javascript
-import {shuffle} from 'brabbelback';
-
-const array = ['foo', 'bar', 'baz'];
-
-console.log(shuffle(array));
 ```
 
 ### visible
@@ -165,7 +189,7 @@ console.log(shuffle(array));
 Test if a DOM element is visible on the users viewport
 
 ```javascript
-import {visible} from 'brabbelback';
+import {visible} from '@schascha/brabbelback';
 
 var el = document.getElementById('name');
 

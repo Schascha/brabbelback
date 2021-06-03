@@ -1,3 +1,6 @@
+import {has} from './array';
+
+
 /**
  * Compare a with b
  * @param  {String|String[]} a
@@ -54,105 +57,12 @@ export function groupBy(obj, key) {
 }
 
 /**
- * Finds value in obj recursively
- * @param  {Object[]} obj
- * @param  {(String|String[])} value
- * @return {Boolean}
- */
-export function has(obj, value) {
-	if (!obj || !value) {
-		return;
-	}
-
-	return (Array.isArray(value))
-		? value.find((el) => has(obj, el)) : obj.indexOf(value) !== -1;
-}
-
-/**
  * Checks if value or array is empty
  * @param  {mixed} value
  * @return {Boolean}
  */
 export function isEmpty(value) {
 	return (value === null || value === '' || (Array.isArray(value) && !value.length));
-}
-
-/**
- * Returns next element
- * @param  {number} index
- * @param  {Object[]} obj
- * @return {mixed}
- */
-export function next(index, obj) {
-	if (Array.isArray(obj)) {
-		return obj[(index + 1) % obj.length];
-	}
-}
-
-/**
- * Returns previous element
- * @param  {number} index
- * @param  {Object[]} obj
- * @return {mixed}
- */
-export function prev(index, obj) {
-	if (Array.isArray(obj)) {
-		return obj[(index + obj.length - 1) % obj.length];
-	}
-}
-
-/**
- * Prints a value or an array of values
- * @param  {(String|String[])} value
- * @return {String}
- */
-export function print(value, separator = ', ') {
-	return (Array.isArray(value)) ? value.join(separator) : value;
-}
-
-/**
- * Pushs a value or an array of values recursively
- * @param  {Array} obj
- * @param  {number | string | Array} value
- * @returns {number | undefined}
- */
-export function push(arr, value) {
-	if (!Array.isArray(arr) || !value || !isType(value, ['array', 'number', 'string'])) {
-		return;
-	}
-
-	if (Array.isArray(value)) {
-		value.forEach((el) => push(arr, el));
-	} else if (!arr.includes(value)) {
-		arr.push(value);
-	}
-
-	return arr.length;
-}
-
-/**
- * Returns random element
- * @param  {Object[]} obj
- * @return {mixed}
- */
-export function random(obj) {
-	if (Array.isArray(obj)) {
-		return obj[Math.floor(Math.random() * obj.length)];
-	}
-}
-
-/**
- * Shuffle array
- * @param {Object[]} obj
- * @returns {Object[]}
- */
-export function shuffle(obj) {
-	if (Array.isArray(obj)) {
-		return obj
-			.map(a => [Math.random(), a])
-			.sort((a, b) => a[0] - b[0])
-			.map(a => a[1]);
-	}
 }
 
 export function typeOf(value) {
