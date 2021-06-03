@@ -152,36 +152,45 @@ classnames(['foo', 'bar', 'baz']); // => 'foo bar baz'
 classnames({foo: true, bar: undefined}, 'baz');  // 'foo baz'
 ```
 
-### cookie
+### Cookie
 
-Handle cookies
+#### `setCookie(name, value, [days=1])`
 
-```javascript
-import {getCookie, setCookie} from '@schascha/brabbelback';
-```
-
-#### Create a cookie
+Create a cookie.
 
 ```javascript
+import {setCookie} from '@schascha/brabbelback';
+
 setCookie('name', 'value');
+setCookie('name', 'value', 7);  // Create a cookie that expires 7 days from now
 ```
 
-#### Create a cookie that expires 7 days from now
+#### `getCookie(name)`
+
+Get cookie by name.
 
 ```javascript
-setCookie('name', 'value', 7);
-```
+import {getCookie} from '@schascha/brabbelback';
 
-#### Read cookie
-
-```javascript
 getCookie('name');
 ```
 
-#### Remove cookie
+#### `removeCookie(name)`
+
+Remove cookie.
 
 ```javascript
 removeCookie('name');  // Same as setCookie('name', '', 0);
+```
+
+#### `clearCookies()`
+
+Clear all cookies.
+
+```javascript
+import {clearCookies} from '@schascha/brabbelback';
+
+clearCookies();
 ```
 
 ### filter
