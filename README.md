@@ -180,6 +180,8 @@ getCookie('name');
 Remove cookie.
 
 ```javascript
+import {removeCookie} from '@schascha/brabbelback';
+
 removeCookie('name');  // Same as setCookie('name', '', 0);
 ```
 
@@ -193,9 +195,7 @@ import {clearCookies} from '@schascha/brabbelback';
 clearCookies();
 ```
 
-### filter
-
-Compare and filter utils
+### Filter
 
 #### Filter an array of objects with multiple criteria
 
@@ -215,15 +215,16 @@ import {compare} from '@schascha/brabbelback';
 import {groupBy} from '@schascha/brabbelback';
 ```
 
-### visible
+### Visible
 
-Test if a DOM element is visible on the users viewport
+#### `visible(el)`
+
+Test if a DOM element is visible on the users viewport.
 
 ```javascript
 import {visible} from '@schascha/brabbelback';
 
-var el = document.getElementById('name');
-
+const el = document.getElementById('name');
 console.log(visible(el));
 ```
 
