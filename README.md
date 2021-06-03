@@ -15,11 +15,11 @@ npm i @schascha/brabbelback
 
 ## Usage
 
-### array
+### Array
 
-Array utils
+#### `has(array, value)`
 
-#### Find a value in array recursively
+Finds a value in array recursively.
 
 ```javascript
 import {has} from '@schascha/brabbelback';
@@ -29,7 +29,9 @@ console.log(has(array, 'foo'));  // true
 console.log(has(array, ['foo', 'bar']));  // true
 ```
 
-#### Return last element from array
+#### `last(array)`
+
+Returns last element from array.
 
 ```javascript
 import {last} from '@schascha/brabbelback';
@@ -38,7 +40,9 @@ const array = ['foo', 'bar', 'baz'];
 console.log(last(['foo', 'bar', 'baz']));  // 'baz'
 ```
 
-#### Return next element from array
+#### `next(index, array, [loop=false])`
+
+Returns next element from array.
 
 ```javascript
 import {next} from '@schascha/brabbelback';
@@ -49,7 +53,9 @@ console.log(next(2, array));  // 'foo'
 console.log(next(2, array, false));  // Disable infinite loop through array. Returns `undefined`.
 ```
 
-#### Return previous element from array
+#### `prev(index, array, [loop=true])`
+
+Returns previous element from array.
 
 ```javascript
 import {prev} from '@schascha/brabbelback';
@@ -60,7 +66,21 @@ console.log(prev(2, array));  // 'bar'
 console.log(prev(0, array, false));  // Disable infinite loop through array. Returns undefined.
 ```
 
-#### Push a value or an array of values recursively
+#### `print(value, [separator=', '])`
+
+Prints a value or an array of values.
+
+```javascript
+import {print} from '@schascha/brabbelback';
+
+console.log(print('foo'))  // 'foo'
+console.log(print(['foo', 'bar', 'baz']))  // 'foo, bar, baz'
+console.log(print(['foo', 'bar', 'baz'], '|'))  // 'foo|bar|baz'
+```
+
+#### `push(array, value, [unique=true])`
+
+Pushs a value or an array of values recursively.
 
 ```javascript
 import {push} from '@schascha/brabbelback';
@@ -71,17 +91,9 @@ push(array, ['foo', 'bar', 'baz']);  // ['foo', 'bar', 'baz']
 push(array, 'foo', false);  // Disable unique push of strings and numbers. Returns ['foo', 'bar', 'baz', 'foo']
 ```
 
-#### Print a value or an array of values
+#### `random(array)`
 
-```javascript
-import {print} from '@schascha/brabbelback';
-
-console.log(print('foo'))  // 'foo'
-console.log(print(['foo', 'bar', 'baz']))  // 'foo, bar, baz'
-console.log(print(['foo', 'bar', 'baz'], '|'))  // 'foo|bar|baz'
-```
-
-#### Return random element from array
+Returns random element from array.
 
 ```javascript
 import {random} from '@schascha/brabbelback';
@@ -90,7 +102,9 @@ const array = ['foo', 'bar', 'baz'];
 console.log(random(array));  // 'foo' or 'bar' or 'baz'
 ```
 
-#### Shuffle array
+#### `shuffle(array)`
+
+Randomize array.
 
 ```javascript
 import {shuffle} from '@schascha/brabbelback';
@@ -99,7 +113,9 @@ const array = ['foo', 'bar'];
 console.log(shuffle(array));  // ['foo', 'bar'] or ['bar', 'foo']
 ```
 
-#### Return value as an array if it's not one
+#### `toArray(value)`
+
+Returns value as an array if it's not one.
 
 ```javascript
 import {toArray} from '@schascha/brabbelback';
