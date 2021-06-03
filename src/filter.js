@@ -55,12 +55,3 @@ export function groupBy(obj, key) {
 		return rv;
 	}, {});
 }
-
-/**
- * Checks if value or array is empty
- * @param  {mixed} value
- * @return {Boolean}
- */
-export function isEmpty(value) {
-	return (value === null || value === '' || (Array.isArray(value) && !value.length));
-}

@@ -1,4 +1,4 @@
-import {compare, isEmpty} from './filter';
+import {compare} from './filter';
 
 
 describe('The filter utils', () => {
@@ -10,14 +10,6 @@ describe('The filter utils', () => {
 		expect(compare(array, 'foo', 'contains')).toBeTruthy();
 		expect(compare('foobar', 'foo', 'contains')).toBeTruthy();
 		expect(compare(array, 'foo')).toBeTruthy();
-	});
-
-	it('should validate empty value', () => {
-		expect(isEmpty(null)).toBeTruthy();
-		expect(isEmpty('')).toBeTruthy();
-		expect(isEmpty([])).toBeTruthy();
-		expect(isEmpty('foo')).toBeFalsy();
-		expect(isEmpty(['foo'])).toBeFalsy();
 	});
 
 });

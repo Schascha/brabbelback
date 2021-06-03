@@ -1,6 +1,6 @@
 /**
  * Conditional class name helper.
- * @param  {*} args Input of class names.
+ * @param  {*} classes Input of class names.
  * @return {string} Returns `classes` as string.
  */
 

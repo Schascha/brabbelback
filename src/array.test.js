@@ -1,4 +1,4 @@
-import {has, last, next, prev, print, push, random, shuffle, toArray} from './array';
+import {has, isEmpty, last, next, prev, print, push, random, shuffle, toArray} from './array';
 
 
 describe('The array utils', () => {
@@ -12,6 +12,16 @@ describe('The array utils', () => {
 		expect(has(array, '')).toBeFalsy();
 		expect(has(array, null)).toBeFalsy();
 		expect(has(array, 'qux')).toBeFalsy();
+	});
+
+	it('should validate empty value or array', () => {
+		expect(isEmpty(null)).toBeTruthy();
+		expect(isEmpty('')).toBeTruthy();
+		expect(isEmpty([])).toBeTruthy();
+		expect(isEmpty([[]])).toBeTruthy();
+		expect(isEmpty('foo')).toBeFalsy();
+		expect(isEmpty(['foo'])).toBeFalsy();
+		expect(isEmpty([[null, 'foo']])).toBeFalsy();
 	});
 
 	it('should return last element', () => {

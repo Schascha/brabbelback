@@ -29,6 +29,19 @@ console.log(has(array, 'foo'));  // true
 console.log(has(array, ['foo', 'bar']));  // true
 ```
 
+#### `isEmpty(value)`
+
+Checks if value or array is empty.
+
+```javascript
+import {isEmpty} from '@schascha/brabbelback';
+
+console.log(isEmpty(null));  // true
+console.log(isEmpty(''));  // true
+console.log(isEmpty([]));  // true
+console.log(isEmpty([[]]));  // true
+```
+
 #### `last(array)`
 
 Returns last element from array.
@@ -191,16 +204,6 @@ import {compare} from '@schascha/brabbelback';
 
 ```javascript
 import {groupBy} from '@schascha/brabbelback';
-```
-
-#### Check if value or array is empty
-
-```javascript
-import {isEmpty} from '@schascha/brabbelback';
-
-console.log(isEmpty(null));  // true
-console.log(isEmpty(''));  // true
-console.log(isEmpty([]));  // true
 ```
 
 ### visible

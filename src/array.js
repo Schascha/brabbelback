@@ -14,6 +14,20 @@
 }
 
 /**
+ * Checks if value or array is empty.
+ * @param  {*} value The value to inspect
+ * @return {boolean} Returns `true` if `value` is empty, else `false`.
+ */
+ export function isEmpty(value) {
+	if (Array.isArray(value)) {
+		return !value.length || value.find(el => isEmpty(el));
+	}
+
+	return value === null || value === '';
+}
+
+
+/**
  * Returns last element from array.
  * @param  {Array} array The array The array to query.
  * @return {*} Returns the last element of `array`.
@@ -111,8 +125,8 @@
 
 /**
  * Returns value as an array if it's not one.
- * @param {*} value The value to inspect
- * @returns {Array} Returns the value as an array
+ * @param {*} value The value to inspect.
+ * @returns {Array} Returns the value as an array.
  */
 export function toArray(...args) {
 	if (!args.length) {
