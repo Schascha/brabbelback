@@ -197,22 +197,54 @@ clearCookies();
 
 ### Filter
 
-#### Filter an array of objects with multiple criteria
+#### `compare(a, b, [operator=''])`
 
-```javascript
-import {filter} from '@schascha/brabbelback';
-```
-
-#### Compare values
+Compare values.
 
 ```javascript
 import {compare} from '@schascha/brabbelback';
 ```
 
-#### Group array items by key
+#### `filter(obj, filters)`
+
+Filter an array of objects with multiple criteria.
+
+```javascript
+import {filter} from '@schascha/brabbelback';
+```
+
+#### `groupBy(array, key)`
+
+Group array items by key.
 
 ```javascript
 import {groupBy} from '@schascha/brabbelback';
+
+const
+	array = [
+		{group: 'foo', name: 'Item 1'},
+		{group: 'bar', name: 'Item 2'},
+		{group: 'foo', name: 'Item 3'},
+		{name: 'Item 4'}
+	]
+;
+
+console.log(groupBy(array, 'group'));
+
+/*
+{
+	foo: [
+		{group: 'foo', name: 'Item 1'},
+		{group: 'foo', name: 'Item 3'}
+	],
+	bar: [
+		{group: 'bar', name: 'Item 2'}
+	],
+	undefined: [
+		{ name: 'Item 4'}
+	]
+}
+*/
 ```
 
 ### Visible

@@ -45,12 +45,12 @@ export function filter(obj, filters) {
 
 /**
  * Group array items by key
- * @param  {Object[]} obj
- * @param  {String} key
- * @return {Object}
+ * @param  {Object[]} array An array with objects to query.
+ * @param  {String} key The key to group the array items.
+ * @return {Object} Returns a object with grouped arrays by the given key.
  */
-export function groupBy(obj, key) {
-	return obj.reduce(function(rv, x) {
+export function groupBy(array, key) {
+	return array.reduce((rv, x) => {
 		(rv[x[key]] = rv[x[key]] || []).push(x);
 		return rv;
 	}, {});
