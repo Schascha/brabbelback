@@ -1,10 +1,10 @@
 /**
  * Conditional class name helper.
- * @param  {*} classes Input of class names.
- * @return {string} Returns `classes` as string.
+ * @param {*} args Input of class names.
+ * @return {string} Returns `args` as string.
  */
 
-export function classnames(...args) {
+ export function classnames(...args) {
 	const classes = (args.length > 1) ? args : args[0];
 
 	if (Array.isArray(classes)) {

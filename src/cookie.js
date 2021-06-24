@@ -1,7 +1,7 @@
 /**
  * Get cookie by name.
- * @param  {string} name The name of the cookie.
- * @return {string} Returs value of cookie, else false.
+ * @param {string} name The name of the cookie.
+ * @return {boolean|string} Returns value of cookie, else false.
  */
 export function getCookie(name) {
 	const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
@@ -13,7 +13,7 @@ export function getCookie(name) {
  * @param {string} name  The name of the cookie.
  * @param {string} value  The value of the cookie.
  * @param {number} [days=1]  The expiration date.
- * @return {undefined}
+ * @return {*}
  */
 export function setCookie(name, value, days = 1) {
 	if (!name) {
@@ -22,13 +22,13 @@ export function setCookie(name, value, days = 1) {
 
 	const date = new Date();
 	date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-	document.cookie = name + '=' + value + '; expires=' + date.toGMTString() + '; path=/';
+	document.cookie = name + '=' + value + '; expires=' + date.toUTCString() + '; path=/';
 }
 
 /**
  * Remove cookie.
  * @param {string} name The name of the cookie.
- * @return {undefined}
+ * @return {*}
  */
 export function removeCookie(name) {
 	setCookie(name, '', 0);
@@ -36,7 +36,7 @@ export function removeCookie(name) {
 
 /**
  * Clear all cookies.
- * @return {undefined}
+ * @return {*}
  */
 export function clearCookies() {
 	document.cookie.split(';').forEach((c) => {

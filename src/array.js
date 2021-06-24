@@ -1,7 +1,7 @@
 /**
  * Finds a value in array recursively.
- * @param  {Array} array The array to query.
- * @param  {*} value The search element.
+ * @param {any[]} array The array to query.
+ * @param {*} value The search element.
  * @return {boolean} Returns `true` if `value` is in `array`, else `false`.
  */
  export function has(array, value) {
@@ -15,7 +15,7 @@
 
 /**
  * Checks if value or array is empty.
- * @param  {*} value The value to inspect
+ * @param {*} value The value to inspect
  * @return {boolean} Returns `true` if `value` is empty, else `false`.
  */
  export function isEmpty(value) {
@@ -29,7 +29,7 @@
 
 /**
  * Returns last element from array.
- * @param  {Array} array The array The array to query.
+ * @param {any[]} array The array The array to query.
  * @return {*} Returns the last element of `array`.
  */
  export function last(array) {
@@ -40,7 +40,7 @@
 /**
  * Returns next element from array.
  * @param {number} index
- * @param {Array} array The array to query.
+ * @param {any[]} array The array to query.
  * @param {boolean} [loop=true] Disable infinite array loop.
  * @returns {*} Return the previous element of `array`.
  */
@@ -54,7 +54,7 @@
 /**
  * Returns previous element from array.
  * @param {number} index
- * @param {Array} array The array to query.
+ * @param {any[]} array The array to query.
  * @param {boolean} [loop=true] Disable infinite array loop.
  * @returns {*} Returns the previous element of `array`.
  */
@@ -77,7 +77,7 @@
 
 /**
  * Pushs a value or an array of values recursively.
- * @param {Array} array The array to query.
+ * @param {any[]} array The array to query.
  * @param {*} value The value to be added.
  * @param {boolean} [unique=true] Unique push of strings or numbers to `array`.
  * @returns {*} Returns the size of `array` or undefined.
@@ -100,7 +100,7 @@
 
 /**
  * Returns random element from array.
- * @param  {Array} array The array to query.
+ * @param {any[]} array The array to query.
  * @return {*} Returns a random element of `array`.
  */
  export function random(array) {
@@ -111,8 +111,8 @@
 
 /**
  * Randomize array.
- * @param {Array} array The array to be shuffled through.
- * @returns {Array} Returns the shuffled array.
+ * @param {any[]} array The array to be shuffled through.
+ * @returns {*} Returns the shuffled array.
  */
  export function shuffle(array) {
 	if (Array.isArray(array)) {
@@ -125,8 +125,8 @@
 
 /**
  * Returns value as an array if it's not one.
- * @param {*} value The value to inspect.
- * @returns {Array} Returns the value as an array.
+ * @param {*} args The value to inspect.
+ * @returns {*} Returns the value as an array.
  */
 export function toArray(...args) {
 	if (!args.length) {
