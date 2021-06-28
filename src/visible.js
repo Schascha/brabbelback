@@ -1,9 +1,9 @@
 /**
  * Returns if the DOM element is visible on the users viewport.
- * @param  {object} el The DOM element to be inspected.
- * @return {boolean} Return `true` if element is visible, else `false` or ``undefined`.
+ * @param  {Element} el The DOM element to be inspected.
+ * @return {*} Return `true` if element is visible, else `false` or ``undefined`.
  */
-export function isVisible(el) {
+ export function isVisible(el) {
 	if (!el) {
 		return;
 	}

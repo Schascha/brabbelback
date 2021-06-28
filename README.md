@@ -247,6 +247,20 @@ console.log(groupBy(array, 'group'));
 */
 ```
 
+### Type
+
+#### `typeOf(value)`
+
+Type-checking with Object.prototype.toString() method.
+
+```javascript
+import {typeOf} from '@schascha/brabbelback';
+
+console.log(typeOf('foo'));  // string
+console.log(typeOf(['foo']));  // array
+console.log(typeOf({foo: 'bar'}));  // object
+```
+
 ### Visible
 
 #### `isVisible(el)`

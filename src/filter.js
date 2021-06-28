@@ -2,11 +2,11 @@ import {has} from './array';
 
 
 /**
- * Compare a with b
+ * Compare a with b.
  * @param  {String|String[]} a
  * @param  {String|String[]} b
  * @param  {String} [operator='']
- * @return {Boolean}
+ * @return {*}
  */
 export function compare(a, b, operator = '') {
 	if (!a || !b) {
@@ -26,9 +26,9 @@ export function compare(a, b, operator = '') {
 }
 
 /**
- * Filters an array of objects with multiple criteria
- * @param  {Object} obj
- * @param  {Object[]} filters
+ * Filters an array of objects with multiple criteria.
+ * @param {Object[]} obj
+ * @param {{field: string, value: any, operator: string}[]} filters
  * @return {Object}
  */
 export function filter(obj, filters) {
@@ -44,7 +44,7 @@ export function filter(obj, filters) {
 }
 
 /**
- * Group array items by key
+ * Group array items by key.
  * @param  {Object[]} array An array with objects to query.
  * @param  {String} key The key to group the array items.
  * @return {Object} Returns a object with grouped arrays by the given key.
