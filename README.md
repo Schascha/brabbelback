@@ -2,6 +2,7 @@
 
 [![Build](https://github.com/Schascha/brabbelback/workflows/Build/badge.svg)](https://github.com/Schascha/brabbelback/actions)
 [![npm](https://img.shields.io/npm/v/@schascha/brabbelback)](https://www.npmjs.com/package/@schascha/brabbelback)
+[![install size](https://packagephobia.com/badge?p=@schascha/brabbelback)](https://packagephobia.com/result?p=@schascha/brabbelback)
 
 Just some JS utils
 
