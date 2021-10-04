@@ -21,7 +21,7 @@
     "url": "https://github.com/Schascha/brabbelback/issues"
   },
   "devDependencies": {
-    "@schascha/eslint-config": "0.0.3",
+    "@schascha/eslint-config": "0.0.4",
     "babel-jest": "^27.0.6",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "eslint": "^7.30.0",
