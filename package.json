@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@schascha/eslint-config": "0.1.0",
-    "babel-jest": "^28.1.2",
+    "babel-jest": "^29.4.3",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "eslint": "^7.30.0",
     "eslint-plugin-jest": "^26.5.3",
