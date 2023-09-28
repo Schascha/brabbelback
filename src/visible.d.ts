@@ -3,4 +3,4 @@
  * @param  {Element} el The DOM element to be inspected.
  * @return {*} Return `true` if element is visible, else `false` or ``undefined`.
  */
- export function isVisible(el: Element): any;
+export function isVisible(el: Element): any;

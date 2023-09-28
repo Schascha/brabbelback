@@ -1,17 +1,13 @@
 {
-  "env": {
-    "node": true,
-    "browser": true,
-    "es6": true,
-    "jest/globals": true
-  },
-  "parserOptions": {
-    "sourceType": "module"
-  },
-  "extends": [
-    "@schascha/eslint-config"
-  ],
-  "plugins": [
-    "jest"
-  ]
+	"env": {
+		"node": true,
+		"browser": true,
+		"es6": true,
+		"jest/globals": true
+	},
+	"parserOptions": {
+		"sourceType": "module"
+	},
+	"extends": ["@schascha/eslint-config"],
+	"plugins": ["jest"]
 }

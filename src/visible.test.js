@@ -1,15 +1,10 @@
-import {isVisible} from './visible';
-
+import { isVisible } from './visible';
 
 describe('The visible utils', () => {
-
 	it('should return if an element is visible', () => {
 		document.body.innerHTML = `<div id="foo"></div>`;
 
-		const
-			el = document.getElementById('foo')
-		;
-
+		const el = document.getElementById('foo');
 		expect(isVisible(el)).toBeTruthy();
 
 		window.innerHeight = 0;
@@ -24,5 +19,4 @@ describe('The visible utils', () => {
 
 		expect(isVisible()).toBeUndefined();
 	});
-
 });

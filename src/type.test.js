@@ -1,8 +1,6 @@
-import {typeOf} from './type';
-
+import { typeOf } from './type';
 
 describe('The type utils', () => {
-
 	it('should get type of value', () => {
 		expect(typeOf('')).toBe('string');
 		expect(typeOf(null)).toBe('null');
@@ -14,5 +12,4 @@ describe('The type utils', () => {
 		expect(typeOf(Symbol())).toBe('symbol');
 		expect(typeOf(() => {})).toBe('function');
 	});
-
 });
