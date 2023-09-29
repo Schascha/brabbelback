@@ -14,8 +14,3 @@ updates:
     directory: '/'
     schedule:
       interval: 'weekly'
-    groups:
-      dev-dependencies:
-        update-types:
-          - 'minor'
-          - 'patch'

@@ -64,7 +64,7 @@ describe('The array utils', () => {
 		expect(push(array, 1)).toBe(4);
 		expect(push(array, 'foo', false)).toBe(5);
 		expect(array).toEqual(
-			expect.arrayContaining(['foo', 'bar', 'baz', 1, 'foo']),
+			expect.arrayContaining(['foo', 'bar', 'baz', 1, 'foo'])
 		);
 		expect(push()).toBeUndefined();
 		expect(push('foo', 'bar')).toBeUndefined();

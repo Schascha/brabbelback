@@ -9,8 +9,8 @@
     "utils"
   ],
   "scripts": {
-    "lint": "eslint --ext \".js\" --ignore-path .gitignore . && prettier . --check",
-    "format": "eslint --ext \".js\" --ignore-path .gitignore . --fix && prettier . --write",
+    "lint": "eslint --ext \".js\" --ignore-path .gitignore . && prettier .",
+    "format": "prettier . --write && eslint --ext \".js\" --ignore-path .gitignore . --fix",
     "test": "jest src/ --coverage --verbose"
   },
   "author": "Sascha Künstler <contact.schascha@gmail.com> (https://www.schaschaweb.de)",
@@ -23,7 +23,7 @@
     "url": "https://github.com/Schascha/brabbelback/issues"
   },
   "devDependencies": {
-    "@schascha/eslint-config": "0.1.0",
+    "@schascha/eslint-config": "^0.2.1",
     "babel-jest": "^29.7.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "eslint": "^7.30.0",

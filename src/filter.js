@@ -17,7 +17,7 @@ export function compare(a, b, operator = '') {
 			if (Array.isArray(a)) {
 				return (
 					a.findIndex(
-						(el) => el.toLowerCase().indexOf(b.toLowerCase()) !== -1,
+						(el) => el.toLowerCase().indexOf(b.toLowerCase()) !== -1
 					) !== -1
 				);
 			} else {
@@ -40,7 +40,7 @@ export function filter(obj, filters) {
 				return filters.every((filter) => {
 					if (Array.isArray(filter.field)) {
 						return filter.field.find((item) =>
-							compare(el[item], filter.value, filter.operator),
+							compare(el[item], filter.value, filter.operator)
 						);
 					} else {
 						return compare(el[filter.field], filter.value, filter.operator);

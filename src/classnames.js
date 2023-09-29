@@ -21,7 +21,7 @@ export function classnames(...args) {
 			Object.keys(classes).filter((el) => {
 				const value = classes[el];
 				return Array.isArray(value) && !value.length ? false : value;
-			}),
+			})
 		);
 	}
 
