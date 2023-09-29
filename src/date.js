@@ -59,18 +59,14 @@ export function daysInMonth(date) {
  * @returns string
  */
 export function formatDate(date, format = 'YYYY-MM-DD') {
-	const
-		day = date.getDate(),
+	const day = date.getDate(),
 		month = date.getMonth() + 1,
-		year = date.getFullYear()
-	;
-
+		year = date.getFullYear();
 	return format
 		.replace('DD', day < 10 ? `0${day}` : day)
 		.replace('D', day)
 		.replace('MM', month < 10 ? `0${month}` : month)
 		.replace('M', month)
 		.replace('YYYY', year)
-		.replace('YY', year.toString().slice(-2))
-	;
+		.replace('YY', year.toString().slice(-2));
 }

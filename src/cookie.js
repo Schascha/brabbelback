@@ -5,7 +5,7 @@
  */
 export function getCookie(name) {
 	const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
-	return (match && match[2]) ? match[2] : false;
+	return match && match[2] ? match[2] : false;
 }
 
 /**
@@ -21,8 +21,9 @@ export function setCookie(name, value, days = 1) {
 	}
 
 	const date = new Date();
-	date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-	document.cookie = name + '=' + value + '; expires=' + date.toUTCString() + '; path=/';
+	date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+	document.cookie =
+		name + '=' + value + '; expires=' + date.toUTCString() + '; path=/';
 }
 
 /**
@@ -42,6 +43,9 @@ export function clearCookies() {
 	document.cookie.split(';').forEach((c) => {
 		const name = c.replace(/[=].*/, '').trim();
 		document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
-		document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${window.location.hostname.replace(/^([^.]+\.)/g, '.')};`;
+		document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${window.location.hostname.replace(
+			/^([^.]+\.)/g,
+			'.'
+		)};`;
 	});
 }

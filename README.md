@@ -23,11 +23,11 @@ npm i @schascha/brabbelback
 Finds a value in array recursively.
 
 ```javascript
-import {has} from '@schascha/brabbelback';
+import { has } from '@schascha/brabbelback';
 
 const array = ['foo', 'bar', 'baz'];
-console.log(has(array, 'foo'));  // true
-console.log(has(array, ['foo', 'bar']));  // true
+console.log(has(array, 'foo')); // true
+console.log(has(array, ['foo', 'bar'])); // true
 ```
 
 #### `isEmpty(value)`
@@ -35,12 +35,12 @@ console.log(has(array, ['foo', 'bar']));  // true
 Checks if value or array is empty.
 
 ```javascript
-import {isEmpty} from '@schascha/brabbelback';
+import { isEmpty } from '@schascha/brabbelback';
 
-console.log(isEmpty(null));  // true
-console.log(isEmpty(''));  // true
-console.log(isEmpty([]));  // true
-console.log(isEmpty([[]]));  // true
+console.log(isEmpty(null)); // true
+console.log(isEmpty('')); // true
+console.log(isEmpty([])); // true
+console.log(isEmpty([[]])); // true
 ```
 
 #### `last(array)`
@@ -48,10 +48,10 @@ console.log(isEmpty([[]]));  // true
 Returns last element from array.
 
 ```javascript
-import {last} from '@schascha/brabbelback';
+import { last } from '@schascha/brabbelback';
 
 const array = ['foo', 'bar', 'baz'];
-console.log(last(['foo', 'bar', 'baz']));  // 'baz'
+console.log(last(['foo', 'bar', 'baz'])); // 'baz'
 ```
 
 #### `next(index, array, [loop=false])`
@@ -59,12 +59,12 @@ console.log(last(['foo', 'bar', 'baz']));  // 'baz'
 Returns next element from array.
 
 ```javascript
-import {next} from '@schascha/brabbelback';
+import { next } from '@schascha/brabbelback';
 
 const array = ['foo', 'bar', 'baz'];
-console.log(next(0, array));  // 'bar'
-console.log(next(2, array));  // 'foo'
-console.log(next(2, array, false));  // Disable infinite loop through array. Returns `undefined`.
+console.log(next(0, array)); // 'bar'
+console.log(next(2, array)); // 'foo'
+console.log(next(2, array, false)); // Disable infinite loop through array. Returns `undefined`.
 ```
 
 #### `prev(index, array, [loop=true])`
@@ -72,12 +72,12 @@ console.log(next(2, array, false));  // Disable infinite loop through array. Ret
 Returns previous element from array.
 
 ```javascript
-import {prev} from '@schascha/brabbelback';
+import { prev } from '@schascha/brabbelback';
 
 const array = ['foo', 'bar', 'baz'];
-console.log(prev(0, array));  // 'baz'
-console.log(prev(2, array));  // 'bar'
-console.log(prev(0, array, false));  // Disable infinite loop through array. Returns undefined.
+console.log(prev(0, array)); // 'baz'
+console.log(prev(2, array)); // 'bar'
+console.log(prev(0, array, false)); // Disable infinite loop through array. Returns undefined.
 ```
 
 #### `print(value, [separator=', '])`
@@ -85,11 +85,11 @@ console.log(prev(0, array, false));  // Disable infinite loop through array. Ret
 Prints a value or an array of values.
 
 ```javascript
-import {print} from '@schascha/brabbelback';
+import { print } from '@schascha/brabbelback';
 
-console.log(print('foo'))  // 'foo'
-console.log(print(['foo', 'bar', 'baz']))  // 'foo, bar, baz'
-console.log(print(['foo', 'bar', 'baz'], '|'))  // 'foo|bar|baz'
+console.log(print('foo')); // 'foo'
+console.log(print(['foo', 'bar', 'baz'])); // 'foo, bar, baz'
+console.log(print(['foo', 'bar', 'baz'], '|')); // 'foo|bar|baz'
 ```
 
 #### `push(array, value, [unique=true])`
@@ -97,12 +97,12 @@ console.log(print(['foo', 'bar', 'baz'], '|'))  // 'foo|bar|baz'
 Pushs a value or an array of values recursively.
 
 ```javascript
-import {push} from '@schascha/brabbelback';
+import { push } from '@schascha/brabbelback';
 
 const array = [];
-push(array, 'foo');  // ['foo']
-push(array, ['foo', 'bar', 'baz']);  // ['foo', 'bar', 'baz']
-push(array, 'foo', false);  // Disable unique push of strings and numbers. Returns ['foo', 'bar', 'baz', 'foo']
+push(array, 'foo'); // ['foo']
+push(array, ['foo', 'bar', 'baz']); // ['foo', 'bar', 'baz']
+push(array, 'foo', false); // Disable unique push of strings and numbers. Returns ['foo', 'bar', 'baz', 'foo']
 ```
 
 #### `random(array)`
@@ -110,10 +110,10 @@ push(array, 'foo', false);  // Disable unique push of strings and numbers. Retur
 Returns random element from array.
 
 ```javascript
-import {random} from '@schascha/brabbelback';
+import { random } from '@schascha/brabbelback';
 
 const array = ['foo', 'bar', 'baz'];
-console.log(random(array));  // 'foo' or 'bar' or 'baz'
+console.log(random(array)); // 'foo' or 'bar' or 'baz'
 ```
 
 #### `shuffle(array)`
@@ -121,10 +121,10 @@ console.log(random(array));  // 'foo' or 'bar' or 'baz'
 Randomize array.
 
 ```javascript
-import {shuffle} from '@schascha/brabbelback';
+import { shuffle } from '@schascha/brabbelback';
 
 const array = ['foo', 'bar'];
-console.log(shuffle(array));  // ['foo', 'bar'] or ['bar', 'foo']
+console.log(shuffle(array)); // ['foo', 'bar'] or ['bar', 'foo']
 ```
 
 #### `toArray(value)`
@@ -132,11 +132,11 @@ console.log(shuffle(array));  // ['foo', 'bar'] or ['bar', 'foo']
 Returns value as an array if it's not one.
 
 ```javascript
-import {toArray} from '@schascha/brabbelback';
+import { toArray } from '@schascha/brabbelback';
 
-console.log(toArray('foo'));  // ['foo']
-console.log(toArray(['foo']));  // ['foo']
-console.log(toArray());  // []
+console.log(toArray('foo')); // ['foo']
+console.log(toArray(['foo'])); // ['foo']
+console.log(toArray()); // []
 ```
 
 ### Classnames
@@ -146,11 +146,11 @@ console.log(toArray());  // []
 Conditional class name helper.
 
 ```javascript
-import {classnames} from '@schascha/brabbelback';
+import { classnames } from '@schascha/brabbelback';
 
-classnames('foo', 'bar', {baz: true}); // => 'foo bar baz'
+classnames('foo', 'bar', { baz: true }); // => 'foo bar baz'
 classnames(['foo', 'bar', 'baz']); // => 'foo bar baz'
-classnames({foo: true, bar: undefined}, 'baz');  // 'foo baz'
+classnames({ foo: true, bar: undefined }, 'baz'); // 'foo baz'
 ```
 
 ### Cookie
@@ -160,10 +160,10 @@ classnames({foo: true, bar: undefined}, 'baz');  // 'foo baz'
 Create a cookie.
 
 ```javascript
-import {setCookie} from '@schascha/brabbelback';
+import { setCookie } from '@schascha/brabbelback';
 
 setCookie('name', 'value');
-setCookie('name', 'value', 7);  // Create a cookie that expires 7 days from now
+setCookie('name', 'value', 7); // Create a cookie that expires 7 days from now
 ```
 
 #### `getCookie(name)`
@@ -171,7 +171,7 @@ setCookie('name', 'value', 7);  // Create a cookie that expires 7 days from now
 Get cookie by name.
 
 ```javascript
-import {getCookie} from '@schascha/brabbelback';
+import { getCookie } from '@schascha/brabbelback';
 
 getCookie('name');
 ```
@@ -181,9 +181,9 @@ getCookie('name');
 Remove cookie.
 
 ```javascript
-import {removeCookie} from '@schascha/brabbelback';
+import { removeCookie } from '@schascha/brabbelback';
 
-removeCookie('name');  // Same as setCookie('name', '', 0);
+removeCookie('name'); // Same as setCookie('name', '', 0);
 ```
 
 #### `clearCookies()`
@@ -191,7 +191,7 @@ removeCookie('name');  // Same as setCookie('name', '', 0);
 Clear all cookies.
 
 ```javascript
-import {clearCookies} from '@schascha/brabbelback';
+import { clearCookies } from '@schascha/brabbelback';
 
 clearCookies();
 ```
@@ -203,7 +203,7 @@ clearCookies();
 Compare values.
 
 ```javascript
-import {compare} from '@schascha/brabbelback';
+import { compare } from '@schascha/brabbelback';
 ```
 
 #### `filter(obj, filters)`
@@ -211,7 +211,7 @@ import {compare} from '@schascha/brabbelback';
 Filter an array of objects with multiple criteria.
 
 ```javascript
-import {filter} from '@schascha/brabbelback';
+import { filter } from '@schascha/brabbelback';
 ```
 
 #### `groupBy(array, key)`
@@ -219,17 +219,14 @@ import {filter} from '@schascha/brabbelback';
 Group array items by key.
 
 ```javascript
-import {groupBy} from '@schascha/brabbelback';
+import { groupBy } from '@schascha/brabbelback';
 
-const
-	array = [
-		{group: 'foo', name: 'Item 1'},
-		{group: 'bar', name: 'Item 2'},
-		{group: 'foo', name: 'Item 3'},
-		{name: 'Item 4'}
-	]
-;
-
+const array = [
+	{ group: 'foo', name: 'Item 1' },
+	{ group: 'bar', name: 'Item 2' },
+	{ group: 'foo', name: 'Item 3' },
+	{ name: 'Item 4' },
+];
 console.log(groupBy(array, 'group'));
 
 /*
@@ -255,11 +252,11 @@ console.log(groupBy(array, 'group'));
 Type-checking with Object.prototype.toString() method.
 
 ```javascript
-import {typeOf} from '@schascha/brabbelback';
+import { typeOf } from '@schascha/brabbelback';
 
-console.log(typeOf('foo'));  // string
-console.log(typeOf(['foo']));  // array
-console.log(typeOf({foo: 'bar'}));  // object
+console.log(typeOf('foo')); // string
+console.log(typeOf(['foo'])); // array
+console.log(typeOf({ foo: 'bar' })); // object
 ```
 
 ### Visible
@@ -269,7 +266,7 @@ console.log(typeOf({foo: 'bar'}));  // object
 Test if a DOM element is visible on the users viewport.
 
 ```javascript
-import {isVisible} from '@schascha/brabbelback';
+import { isVisible } from '@schascha/brabbelback';
 
 const el = document.getElementById('name');
 console.log(isVisible(el));
