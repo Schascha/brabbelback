@@ -1,6 +1,6 @@
 /**
  * Copy text to the clipboard
- * @param {string} text
+ * @param {*} text
  */
 export function copy(text) {
 	if (navigator && navigator.clipboard) {

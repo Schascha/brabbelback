@@ -198,6 +198,8 @@ clearCookies();
 
 ### Copy
 
+#### `copy(text)`
+
 Copy text to the clipboard.
 
 ```javascript
@@ -205,6 +207,32 @@ import { copy } from '@schascha/brabbelback';
 
 copy('foo');
 ```
+
+### Date
+
+#### `addDays(date, days)`
+
+Add days to a date.
+
+#### `addMonths(date, months)`
+
+Add months to a date.
+
+#### `addYears(date, years)`
+
+Add years to a date.
+
+#### `diffInDays(date1, date2)`
+
+Get the difference in days between two dates.
+
+#### `daysInMonth(date)`
+
+Get the number of days in a month.
+
+#### `formatDate(date, [format='YYYY-MM-DD'])`
+
+Format a date as YYYY-MM-DD or a custom format.
 
 ### Filter
 
