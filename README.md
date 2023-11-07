@@ -196,6 +196,16 @@ import { clearCookies } from '@schascha/brabbelback';
 clearCookies();
 ```
 
+### Copy
+
+Copy text to the clipboard.
+
+```javascript
+import { copy } from '@schascha/brabbelback';
+
+copy('foo');
+```
+
 ### Filter
 
 #### `compare(a, b, [operator=''])`
