@@ -14,38 +14,42 @@ describe('The filter utils', () => {
 			{
 				name: 'Audi',
 				type: 'car',
-				color: 'red'
+				color: 'red',
 			},
 			{
 				name: 'VW',
 				alias: 'Volkswagen',
 				type: 'car',
-				color: 'black'
+				color: 'black',
 			},
 			{
 				name: 'Suziki',
 				type: 'motorcycle',
-				color: 'blue'
+				color: 'blue',
 			},
 		];
 		expect(filter(array)).toBe(array);
 		expect(filter(array, [])).toBe(array);
-		expect(filter(array, [
-			{
-				field: 'type',
-				value: 'car',
-			},
-			{
-				field: 'color',
-				value: 'black',
-			}
-		]).length).toBe(1);
-		expect(filter(array, [
-			{
-				field: ['name', 'alias'],
-				value: 'VW',
-			},
-		]).length).toBe(1);
+		expect(
+			filter(array, [
+				{
+					field: 'type',
+					value: 'car',
+				},
+				{
+					field: 'color',
+					value: 'black',
+				},
+			]).length
+		).toBe(1);
+		expect(
+			filter(array, [
+				{
+					field: ['name', 'alias'],
+					value: 'VW',
+				},
+			]).length
+		).toBe(1);
 	});
 
 	it('should group array items by key', () => {
