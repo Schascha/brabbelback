@@ -46,7 +46,7 @@ export function filter(obj, filters) {
 						return compare(el[filter.field], filter.value, filter.operator);
 					}
 				});
-		  })
+			})
 		: obj;
 }
 
