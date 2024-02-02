@@ -283,6 +283,25 @@ console.log(groupBy(array, 'group'));
 */
 ```
 
+### Scroll
+
+#### `scrollToTop(el, offset, behavior)`
+
+Scroll to the top of the element.
+
+```javascript
+import { scrollToTop } from '@schascha/brabbelback';
+
+const el = document.querySelector('.el');
+scrollToTop(el);
+
+// Scroll to element with sticky header
+scrollToTop(el, '.header');
+
+// Scroll to element with offset
+scrollToTop(el, 100);
+```
+
 ### Type
 
 #### `typeOf(value)`
