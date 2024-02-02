@@ -52,7 +52,7 @@ export function filter(obj, filters) {
 
 /**
  * Group array items by key.
- * @param  {Object[]} array An array with objects to query.
+ * @param  {Object[]} array  An array with objects to query.
  * @param  {String} key The key to group the array items.
  * @return {Object} Returns a object with grouped arrays by the given key.
  */

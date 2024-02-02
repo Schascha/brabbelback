@@ -1,7 +1,7 @@
 /**
  * Add days to a date
- * @param {Date} date
- * @param {number} days
+ * @param {Date} date - The date to add days to
+ * @param {number} days - The number of days to add
  * @returns Date
  */
 export function addDays(date, days) {
@@ -12,8 +12,8 @@ export function addDays(date, days) {
 
 /**
  * Add months to a date
- * @param {Date} date
- * @param {number} months
+ * @param {Date} date - The date to add months to
+ * @param {number} months - The number of months to add
  * @returns Date
  */
 export function addMonths(date, months) {
@@ -24,8 +24,8 @@ export function addMonths(date, months) {
 
 /**
  * Add years to a date
- * @param {Date} date
- * @param {number} years
+ * @param {Date} date - The date to add years to
+ * @param {number} years - The number of years to add
  * @returns Date
  */
 export function addYears(date, years) {
@@ -36,8 +36,8 @@ export function addYears(date, years) {
 
 /**
  * Get the difference in days between two dates
- * @param {Date} date1
- * @param {Date} date2
+ * @param {Date} date1 - The first date
+ * @param {Date} date2 - The second date
  * @returns number
  */
 export function diffInDays(date1, date2) {
@@ -46,7 +46,7 @@ export function diffInDays(date1, date2) {
 
 /**
  * Get the number of days in a month
- * @param {Date} date
+ * @param {Date} date - The date to get the number of days in the month for
  * @returns number
  */
 export function daysInMonth(date) {
@@ -55,7 +55,8 @@ export function daysInMonth(date) {
 
 /**
  * Format a date as YYYY-MM-DD or a custom format
- * @param {Date} date
+ * @param {Date} date - The date to format
+ * @param {string} format - The format to use, defaults to YYYY-MM-DD
  * @returns string
  */
 export function formatDate(date, format = 'YYYY-MM-DD') {
