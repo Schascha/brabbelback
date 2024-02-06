@@ -25,7 +25,9 @@ export function scrollToTop(el, offset = 0, behavior = 'smooth') {
 
 	offset = offset || 0;
 
-	const top = Math.max(el.offsetTop, el.getBoundingClientRect().top + window.scrollY) - offset;
+	const top =
+		Math.max(el.offsetTop, el.getBoundingClientRect().top + window.scrollY) -
+		offset;
 	if (el && top) {
 		if ('scrollBehavior' in document.documentElement.style) {
 			window.scrollTo({ top, behavior });
