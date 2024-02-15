@@ -7,5 +7,7 @@
  */
 export function truncate(str, length = 250, ending = '...') {
 	str = str.trim();
-	return (str.length > length) ? `${str.slice(0, length - ending.length).trim()}${ending}` : str;
+	return str.length > length
+		? `${str.slice(0, length - ending.length).trim()}${ending}`
+		: str;
 }
