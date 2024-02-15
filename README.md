@@ -67,7 +67,7 @@ console.log(next(2, array)); // 'foo'
 console.log(next(2, array, false)); // Disable infinite loop through array. Returns `undefined`.
 ```
 
-#### `prev(index, array, [loop=true])`
+#### `prev(index, array, loop = true)`
 
 Returns previous element from array.
 
@@ -80,7 +80,7 @@ console.log(prev(2, array)); // 'bar'
 console.log(prev(0, array, false)); // Disable infinite loop through array. Returns undefined.
 ```
 
-#### `print(value, [separator=', '])`
+#### `print(value, separator = ', ')`
 
 Prints a value or an array of values.
 
@@ -92,7 +92,7 @@ console.log(print(['foo', 'bar', 'baz'])); // 'foo, bar, baz'
 console.log(print(['foo', 'bar', 'baz'], '|')); // 'foo|bar|baz'
 ```
 
-#### `push(array, value, [unique=true])`
+#### `push(array, value, unique = true)`
 
 Pushs a value or an array of values recursively.
 
@@ -155,7 +155,7 @@ classnames({ foo: true, bar: undefined }, 'baz'); // 'foo baz'
 
 ### Cookie
 
-#### `setCookie(name, value, [days=1])`
+#### `setCookie(name, value, days = 1)`
 
 Create a cookie.
 
@@ -230,13 +230,13 @@ Get the difference in days between two dates.
 
 Get the number of days in a month.
 
-#### `formatDate(date, [format='YYYY-MM-DD'])`
+#### `formatDate(date, format = 'YYYY-MM-DD')`
 
 Format a date as YYYY-MM-DD or a custom format.
 
 ### Filter
 
-#### `compare(a, b, [operator=''])`
+#### `compare(a, b, operator = '')`
 
 Compare values.
 
@@ -285,7 +285,7 @@ console.log(groupBy(array, 'group'));
 
 ### Scroll
 
-#### `scrollToTop(el, offset, behavior)`
+#### `scrollToTop(el, offset = 0, behavior = 'smooth')`
 
 Scroll to the top of the element.
 
@@ -300,6 +300,18 @@ scrollToTop(el, '.header');
 
 // Scroll to element with offset
 scrollToTop(el, 100);
+```
+
+### Text
+
+#### `truncate(str, length = 250, ending = '...')`
+
+Truncate a string to a certain length
+
+```javascript
+import { truncate } from '@schascha/brabbelback';
+
+truncate('Hello World', 8); // Hello...
 ```
 
 ### Type

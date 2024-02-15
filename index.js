@@ -5,5 +5,6 @@ export * from './src/copy';
 export * from './src/date';
 export * from './src/filter';
 export * from './src/scroll';
+export * from './src/text';
 export * from './src/type';
 export * from './src/visible';
