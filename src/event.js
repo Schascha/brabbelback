@@ -21,7 +21,7 @@ export function debounce(fn, delay) {
 export function throttled(fn, delay) {
 	let timer = 0;
 	return (...args) => {
-		const now = (new Date).getTime();
+		const now = new Date().getTime();
 		if (now - timer < delay) {
 			return;
 		}

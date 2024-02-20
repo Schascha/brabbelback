@@ -37,16 +37,16 @@ export function compare(a, b, operator = '') {
 export function filter(obj, filters) {
 	return filters && filters.length
 		? obj.filter((el) => {
-			return filters.every((filter) => {
-				if (Array.isArray(filter.field)) {
-					return filter.field.find((item) =>
-						compare(el[item], filter.value, filter.operator)
-					);
-				} else {
-					return compare(el[filter.field], filter.value, filter.operator);
-				}
-			});
-		})
+				return filters.every((filter) => {
+					if (Array.isArray(filter.field)) {
+						return filter.field.find((item) =>
+							compare(el[item], filter.value, filter.operator)
+						);
+					} else {
+						return compare(el[filter.field], filter.value, filter.operator);
+					}
+				});
+			})
 		: obj;
 }
 
