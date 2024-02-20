@@ -234,6 +234,24 @@ Get the number of days in a month.
 
 Format a date as YYYY-MM-DD or a custom format.
 
+### Event
+
+#### `debounce(fn, delay)`
+
+Debounce function to prevent multiple calls in a short period of time.
+
+```javascript
+import { debounce } from '@schascha/brabbelback';
+```
+
+#### `throttled(fn, delay)`
+
+Throttle function to reduce the trigger rate.
+
+```javascript
+import { throttled } from '@schascha/brabbelback';
+```
+
 ### Filter
 
 #### `compare(a, b, operator = '')`
