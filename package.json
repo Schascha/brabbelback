@@ -23,9 +23,9 @@
     "url": "https://github.com/Schascha/brabbelback/issues"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.23.9",
     "@schascha/eslint-config": "^0.2.1",
     "babel-jest": "^29.7.0",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "eslint": "^8.50.0",
     "eslint-plugin-jest": "^27.4.0",
     "jest": "^29.7.0",
