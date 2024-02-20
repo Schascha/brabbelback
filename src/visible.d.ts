@@ -1,1 +1,1 @@
-export function isVisible(el: Element): any;
+export function isVisible(el: Element): boolean | undefined;

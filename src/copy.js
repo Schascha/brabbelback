@@ -1,6 +1,7 @@
 /**
  * Copy text to the clipboard
  * @param {*} text - The text to copy
+ * @returns {void}
  */
 export function copy(text) {
 	if (navigator && navigator.clipboard) {
