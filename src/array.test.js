@@ -52,7 +52,7 @@ describe('The array utils', () => {
 		const array = ['foo', 'bar', 'baz'];
 		expect(prev(0, array)).toBe('baz');
 		expect(prev(2, array)).toBe('bar');
-		expect(prev(2, array, false)).toBeUndefined();
+		expect(prev(0, array, false)).toBeUndefined();
 		expect(prev(0, ['foo'])).toBe('foo');
 		expect(prev()).toBeUndefined();
 	});
@@ -74,7 +74,7 @@ describe('The array utils', () => {
 		expect(print('foo')).toBe('foo');
 		expect(print(['foo', 'bar', 'baz'])).toBe('foo, bar, baz');
 		expect(print(['foo', 'bar', 'baz'], '|')).toBe('foo|bar|baz');
-		expect(print()).toBeUndefined();
+		expect(print()).toBe('');
 	});
 
 	it('should return random element', () => {

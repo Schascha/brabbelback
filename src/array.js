@@ -1,8 +1,8 @@
 /**
- * Finds a value in array recursively.
- * @param {any[]} array The array to query.
- * @param {*} value The search element.
- * @return {boolean} Returns `true` if `value` is in `array`, else `false`.
+ * Finds a value in array recursively
+ * @param {*[]} array - The array to query
+ * @param {*|*[]} value - The value or array of values to find
+ * @return {boolean} Returns `true` if value is found, else `false`
  */
 export function has(array, value) {
 	if (!array || !value) {
@@ -15,9 +15,9 @@ export function has(array, value) {
 }
 
 /**
- * Checks if value or array is empty.
- * @param {*} value The value to inspect
- * @return {boolean} Returns `true` if `value` is empty, else `false`.
+ * Checks if value or array is empty
+ * @param {*|*[]} value - The value or array to check
+ * @return {boolean} Returns `true` if value is empty, else `false`
  */
 export function isEmpty(value) {
 	if (Array.isArray(value)) {
@@ -28,21 +28,22 @@ export function isEmpty(value) {
 }
 
 /**
- * Returns last element from array.
- * @param {any[]} array The array The array to query.
- * @return {*} Returns the last element of `array`.
+ * Returns last element from array
+ * @param {any[]} array - The array to query
+ * @return {*} Returns the last element of the array or undefined
  */
 export function last(array) {
-	const length = (array && array.length) || 0;
-	return length ? array[length - 1] : undefined;
+	if (Array.isArray(array)) {
+		return array[array.length - 1];
+	}
 }
 
 /**
- * Returns next element from array.
- * @param {number} index
- * @param {any[]} array The array to query.
- * @param {boolean} [loop=true] Disable infinite array loop.
- * @returns {*} Return the previous element of `array`.
+ * Returns next element from array
+ * @param {number} index - The index to query
+ * @param {any[]} array - The array to query
+ * @param {boolean} [loop=true] - Disable infinite array loop
+ * @returns {*} Return the previous element of the array
  */
 export function next(index, array, loop = true) {
 	if (Array.isArray(array)) {
@@ -52,35 +53,36 @@ export function next(index, array, loop = true) {
 }
 
 /**
- * Returns previous element from array.
- * @param {number} index
- * @param {any[]} array The array to query.
- * @param {boolean} [loop=true] Disable infinite array loop.
- * @returns {*} Returns the previous element of `array`.
+ * Returns previous element from array
+ * @param {number} index - The index to query
+ * @param {any[]} array - The array to query
+ * @param {boolean} [loop=true] - Disable infinite array loop
+ * @returns {*} Returns the previous element of the array
  */
 export function prev(index, array, loop = true) {
 	if (Array.isArray(array)) {
-		const prev = index + array.length - 1;
-		return array[loop ? prev % array.length : prev];
+		const length = array.length;
+		const prev = index - 1;
+		return array[loop ? (prev + length) % length : prev];
 	}
 }
 
 /**
- * Prints a value or an array of values.
- * @param {*} value The value to print
- * @param {*} [separator=', '] The join separator
- * @returns {*} Returns value or joined array of `value`
+ * Prints a value or an array of values
+ * @param {*|*[]} value - The value or array of values to print
+ * @param {string} [separator=', '] - The join separator
+ * @returns {string} Returns the value as a string
  */
 export function print(value, separator = ', ') {
-	return Array.isArray(value) ? value.join(separator) : value;
+	return toArray(value).join(separator);
 }
 
 /**
- * Pushs a value or an array of values recursively.
- * @param {any[]} array The array to query.
- * @param {*} value The value to be added.
- * @param {boolean} [unique=true] Unique push of strings or numbers to `array`.
- * @returns {*} Returns the size of `array` or undefined.
+ * Pushs a value or an array of values recursively
+ * @param {*[]} array - The array to add values to
+ * @param {*[]} value - The value or array of values to add
+ * @param {boolean} [unique=true] - If `true`, only unique values will be added
+ * @returns {number|undefined} Returns the size of the array or undefined
  */
 export function push(array, value, unique = true) {
 	if (!Array.isArray(array) || !value) {
@@ -99,9 +101,9 @@ export function push(array, value, unique = true) {
 }
 
 /**
- * Returns random element from array.
- * @param {any[]} array The array to query.
- * @return {*} Returns a random element of `array`.
+ * Returns random element from array
+ * @param {any[]} array - The array to query
+ * @return {*} Returns a random element or undefined
  */
 export function random(array) {
 	if (Array.isArray(array)) {
@@ -110,9 +112,9 @@ export function random(array) {
 }
 
 /**
- * Randomize array.
- * @param {any[]} array The array to be shuffled through.
- * @returns {*} Returns the shuffled array.
+ * Randomize array
+ * @param {*[]} array - The array to be shuffled through
+ * @returns {*} Returns the shuffled array or undefined
  */
 export function shuffle(array) {
 	if (Array.isArray(array)) {
@@ -124,14 +126,10 @@ export function shuffle(array) {
 }
 
 /**
- * Returns value as an array if it's not one.
- * @param {*} args The value to inspect.
- * @returns {*} Returns the value as an array.
+ * Returns value as an array if it's not one
+ * @param {*|*[]} value - The value to convert to an array
+ * @returns {*[]} Returns the value as an array
  */
-export function toArray(...args) {
-	if (!args.length) {
-		return [];
-	}
-	const value = args[0];
+export function toArray(value = []) {
 	return Array.isArray(value) ? value : [value];
 }

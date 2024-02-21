@@ -54,7 +54,7 @@ const array = ['foo', 'bar', 'baz'];
 console.log(last(['foo', 'bar', 'baz'])); // 'baz'
 ```
 
-#### `next(index, array, [loop=false])`
+#### `next(index, array, loop = false)`
 
 Returns next element from array.
 
