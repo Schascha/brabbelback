@@ -77,7 +77,7 @@ import { prev } from '@schascha/brabbelback';
 const array = ['foo', 'bar', 'baz'];
 console.log(prev(0, array)); // 'baz'
 console.log(prev(2, array)); // 'bar'
-console.log(prev(0, array, false)); // Disable infinite loop through array. Returns undefined.
+console.log(prev(0, array, false)); // Disable infinite loop through array. Returns `undefined`.
 ```
 
 #### `print(value, separator = ', ')`
@@ -214,25 +214,62 @@ copy('foo');
 
 Add days to a date.
 
+```javascript
+import { addDays } from '@schascha/brabbelback';
+
+console.log(addDays(new Date('2020-01-01'), 1)); // new Date('2020-01-02')
+```
+
 #### `addMonths(date, months)`
 
 Add months to a date.
+
+```javascript
+import { addMonths } from '@schascha/brabbelback';
+
+console.log(addMonths(new Date('2020-01-01'), 1)); // new Date('2020-02-01')
+```
 
 #### `addYears(date, years)`
 
 Add years to a date.
 
+```javascript
+import { addYears } from '@schascha/brabbelback';
+
+console.log(addYears(new Date('2020-01-01'), 1)); // new Date('2021-01-01')
+```
+
 #### `diffInDays(date1, date2)`
 
 Get the difference in days between two dates.
+
+```javascript
+import { diffInDays } from '@schascha/brabbelback';
+
+console.log(diffInDays(new Date('2020-01-01'), new Date('2020-02-01'))); // 31
+```
 
 #### `daysInMonth(date)`
 
 Get the number of days in a month.
 
+```javascript
+import { daysInMonth } from '@schascha/brabbelback';
+
+console.log(daysInMonth(new Date('2020-01-01')); // 31
+```
+
 #### `formatDate(date, format = 'YYYY-MM-DD')`
 
 Format a date as YYYY-MM-DD or a custom format.
+
+```javascript
+import { formatDate } from '@schascha/brabbelback';
+
+console.log(formatDate(new Date('2020-01-31')); // 2020-01-31
+console.log(formatDate(new Date('2020-01-31'), 'DD.MM.YYYY'); // 31.01.2020
+```
 
 ### Event
 
@@ -314,7 +351,7 @@ console.log(gcd(8, 12)); // 4
 #### `ratio(a, b)`
 
 ```javascript
-import { gcd } from '@schascha/brabbelback';
+import { ratio } from '@schascha/brabbelback';
 
 console.log(ratio(1024, 768)); // 4:3
 ```
