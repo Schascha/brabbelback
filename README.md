@@ -301,6 +301,24 @@ console.log(groupBy(array, 'group'));
 */
 ```
 
+### Math
+
+#### `gcd(a, b)`
+
+```javascript
+import { gcd } from '@schascha/brabbelback';
+
+console.log(gcd(8, 12)); // 4
+```
+
+#### `ratio(a, b)`
+
+```javascript
+import { gcd } from '@schascha/brabbelback';
+
+console.log(ratio(1024, 768)); // 4:3
+```
+
 ### Scroll
 
 #### `scrollToTop(el, offset = 0, behavior = 'smooth')`
