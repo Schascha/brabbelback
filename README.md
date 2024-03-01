@@ -340,7 +340,7 @@ console.log(groupBy(array, 'group'));
 
 ### Inject
 
-#### `inject(src)`
+#### `injectScript(src)`
 
 ```javascript
 import { injectScript } from '@schascha/brabbelback';
