@@ -338,6 +338,14 @@ console.log(groupBy(array, 'group'));
 */
 ```
 
+### Inject
+
+#### `inject(src)`
+
+```javascript
+import { injectScript } from '@schascha/brabbelback';
+```
+
 ### Math
 
 #### `gcd(a, b)`
