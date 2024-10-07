@@ -4,7 +4,7 @@
  * @returns {Promise} A promise that resolves when the script has been injected
  */
 
-export function injectScript(src: string) {
+export function injectScript(src: string): Promise<any> {
 	return new Promise((resolve, reject) => {
 		if (document.querySelector(`script[src="${src}"]`)) {
 			return resolve;
