@@ -5,12 +5,12 @@
   "main": "index.js",
   "keywords": [
     "javascript",
-    "es6",
+    "typescript",
     "utils"
   ],
   "scripts": {
     "start": "tsc -w",
-    "lint": "eslint && prettier . --check",
+    "lint": "eslint . && prettier . --check",
     "format": "prettier . --write && eslint --fix",
     "test": "jest src/ --coverage --verbose"
   },
